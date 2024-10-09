@@ -1,0 +1,5 @@
+# ninja log v6
+1	330	7501895727691671	CMakeFiles/ctdlreal.dir/main.cpp.obj	e44fc6266d1ae6fd
+5	1206	7501895727722369	CMakeFiles/ctdlreal.dir/src/main.cpp.obj	dbfcc4bd3c031932
+1	174	7501896593441571	build.ninja	af9fdb273c9eb3ac
+4	67	7501896593641730	ctdlreal.exe	5ffc1bdb024f4f69
