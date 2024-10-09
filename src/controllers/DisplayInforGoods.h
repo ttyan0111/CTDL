@@ -1,0 +1,8 @@
+//
+// Created by Yan on 09/10/2024.
+//
+
+#ifndef DISPLAYINFORGOODS_H
+#define DISPLAYINFORGOODS_H
+
+#endif //DISPLAYINFORGOODS_H

@@ -94,7 +94,11 @@
 				2,
 				3,
 				4,
-				6
+				6,
+				7,
+				8,
+				9,
+				10
 			]
 		},
 		{
@@ -109,22 +113,22 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "src/init/Goods.h",
+			"path" : "src/models/Goods.h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/init/DateTime.h",
+			"path" : "src/models/DateTime.h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/display/DisplayMain.h",
+			"path" : "src/view/DisplayMain.h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/init/Order.h",
+			"path" : "src/models/Order.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -141,6 +145,26 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/config/Font_Color.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/controllers/FindInforGoods.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/controllers/DisplayInforGoods.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/controllers/OrderGoods.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/controllers/Manage.h",
 			"sourceGroupIndex" : 0
 		}
 	],

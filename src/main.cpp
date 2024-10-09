@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "init/Goods.h"
-#include "display/DisplayMain.h"
+#include "models/Goods.h"
+#include "view/DisplayMain.h"
 #include "config/UTF8.h"
 
 
