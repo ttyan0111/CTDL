@@ -93,7 +93,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				6
 			]
 		},
 		{
@@ -128,7 +129,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/init/UTF8.h",
+			"path" : "src/config/UTF8.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -136,6 +137,11 @@
 			"compileGroupIndex" : 0,
 			"path" : "src/main.cpp",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/config/Font_Color.h",
+			"sourceGroupIndex" : 0
 		}
 	],
 	"type" : "EXECUTABLE"

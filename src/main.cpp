@@ -2,7 +2,7 @@
 
 #include "init/Goods.h"
 #include "display/DisplayMain.h"
-#include "init/UTF8.h"
+#include "config/UTF8.h"
 
 
 int main() {

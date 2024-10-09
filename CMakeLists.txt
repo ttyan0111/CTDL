@@ -8,7 +8,7 @@ add_executable(ctdlreal
         src/init/DateTime.h
         src/display/DisplayMain.h
         src/init/Order.h
-        src/init/UTF8.h
+        src/config/UTF8.h
         src/main.cpp
-        src/main.cpp
+        src/config/Font_Color.h
 )
