@@ -100,7 +100,8 @@
 				9,
 				10,
 				11,
-				12
+				12,
+				13
 			]
 		},
 		{
@@ -166,7 +167,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/controllers/Manage.h",
+			"path" : "src/controllers/ManageController.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -177,6 +178,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/controllers/DisplayMainController.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/service/LoginService.h",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -14,7 +14,8 @@ add_executable(ctdlreal
         src/controllers/FindInforGoods.h
         src/controllers/DisplayInforGoods.h
         src/controllers/OrderGoods.h
-        src/controllers/Manage.h
+        src/controllers/ManageController.h
         src/models/AccountModel.h
         src/controllers/DisplayMainController.h
+        src/service/LoginService.h
 )
