@@ -8,7 +8,7 @@
 #include <iostream>
 #include <stdexcept> // Thêm thư viện để sử dụng std::invalid_argument
 
-class DateTime {
+class DateTimeModel {
 private:
     int day = 1, month = 1, year = 1900; // Giá trị mặc định
 
@@ -32,9 +32,9 @@ private:
 
 public:
     // Constructor
-    DateTime() = default;
+    DateTimeModel() = default;
 
-    DateTime(int day, int month, int year) {
+    DateTimeModel(int day, int month, int year) {
         if (!isValidDate(day, month, year)) {
             throw std::invalid_argument("Invalid date provided.");
         }

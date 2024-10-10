@@ -98,7 +98,9 @@
 				7,
 				8,
 				9,
-				10
+				10,
+				11,
+				12
 			]
 		},
 		{
@@ -113,12 +115,12 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "src/models/Goods.h",
+			"path" : "src/models/GoodsModel.h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/models/DateTime.h",
+			"path" : "src/models/DateTimeModel.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -128,7 +130,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/models/Order.h",
+			"path" : "src/models/OrderModel.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -165,6 +167,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/controllers/Manage.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/models/AccountModel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/controllers/DisplayMainController.h",
 			"sourceGroupIndex" : 0
 		}
 	],

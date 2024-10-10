@@ -1,12 +1,13 @@
 #include <iostream>
 
-#include "models/Goods.h"
+#include "models/GoodsModel.h"
 #include "view/DisplayMain.h"
 #include "config/UTF8.h"
+#include "controllers/DisplayMainController.h"
 
 
 int main() {
     setupUtf8Environment();
-    DisplayMain menu;
-    menu.displayMenu();
+    DisplayMainController controller;
+    controller.start();
 }

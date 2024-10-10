@@ -6,23 +6,23 @@
 #include <string>
 #include <iostream>
 #include <utility>
-#include "DateTime.h"
+#include "DateTimeModel.h"
 // Khai báo trong lớp Goods
-class Goods {
+class GoodsModel {
 private:
     std::string productCode;
     std::string productName;
     std::string placeOfOrigin;
     std::string color;
     double price;
-    DateTime importDate; // Sử dụng lớp DateTime
+    DateTimeModel importDate; // Sử dụng lớp DateTime
     int quantity;
 
 public:
     // Constructor
-    Goods() = default;
-    Goods(std::string product_code, std::string product_name, std::string place_of_origin, std::string color,
-          double price, DateTime import_date, int quantity)
+    GoodsModel() = default;
+    GoodsModel(std::string product_code, std::string product_name, std::string place_of_origin, std::string color,
+          double price, DateTimeModel import_date, int quantity)
         : productCode(std::move(product_code)),
           productName(std::move(product_name)),
           placeOfOrigin(std::move(place_of_origin)),

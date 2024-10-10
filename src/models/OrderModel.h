@@ -7,26 +7,26 @@
 #include <vector>
 #include <iostream>
 #include <utility>
-#include "Goods.h"
-#include "DateTime.h"
+#include "GoodsModel.h"
+#include "DateTimeModel.h"
 
-class Order {
+class OrderModel {
 private:
     int orderNumber;  // Số thứ tự đơn hàng
-    std::vector<Goods> items;  // Danh sách mã hàng
+    std::vector<GoodsModel> items;  // Danh sách mã hàng
     int quantity;  // Tổng số lượng hàng
     double totalPrice;  // Tổng tiền
     std::string customerName;  // Tên khách hàng
     std::string customerAddress;  // Địa chỉ khách hàng
     std::string customerPhone;  // Số điện thoại khách hàng
-    DateTime orderDate;  // Ngày đặt hàng
+    DateTimeModel orderDate;  // Ngày đặt hàng
 
 public:
     // Constructor
-    Order() = default;
-    Order(int order_number, std::vector<Goods> items, int quantity, double total_price,
+    OrderModel() = default;
+    OrderModel(int order_number, std::vector<GoodsModel> items, int quantity, double total_price,
         std::string customer_name, std::string customer_address, std::string customer_phone,
-        DateTime order_date)
+        DateTimeModel order_date)
         : orderNumber(order_number),
         items(std::move(items)),
         quantity(quantity),

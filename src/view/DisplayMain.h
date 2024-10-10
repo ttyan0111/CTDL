@@ -13,16 +13,15 @@
 class DisplayMain {
 private:
     std::vector<std::string> options{
-        
+
         "Hiển thị thông tin hàng hóa",
         "Tìm kiếm thông tin hàng hóa",
         "Đặt hàng",
         "Quản lý"
     };
-    int selectedIndex = 0;  // Chỉ số lựa chọn hiện tại
+    int selectedIndex = 0; // Chỉ số lựa chọn hiện tại
 
 public:
-
     // Hàm hiển thị menu chính
     void displayMenu() {
         while (true) {
@@ -31,33 +30,31 @@ public:
             for (int i = 0; i < options.size(); ++i) {
                 if (i == selectedIndex) {
                     setColor(10, 0); // Màu chữ xanh lá cho lựa chọn hiện tại
-                    std::cout << "> " << options[i] << " <" << std::endl;  // Hiển thị lựa chọn hiện tại
+                    std::cout << "> " << options[i] << " <" << std::endl; // Hiển thị lựa chọn hiện tại
                     setColor(7, 0); // Trở về màu mặc định sau khi hiển thị
-                }
-                else {
+                } else {
                     setColor(7, 0); // Màu chữ trắng cho các lựa chọn khác
-                    std::cout << "  " << options[i] << std::endl;  // Hiển thị lựa chọn không được chọn
+                    std::cout << "  " << options[i] << std::endl; // Hiển thị lựa chọn không được chọn
                 }
             }
-
-            char key = _getch();  // Bắt phím nhấn  
-            if (key == 72) {  // Phím mũi tên lên
+            char key = _getch(); // Bắt phím nhấn
+            if (key == 72) {
+                // Phím mũi tên lên
                 if (selectedIndex > 0) {
                     selectedIndex--;
                 }
-            }
-            else if (key == 80) {  // Phím mũi tên xuống
+            } else if (key == 80) {
+                // Phím mũi tên xuống
                 if (selectedIndex < options.size() - 1) {
                     selectedIndex++;
                 }
-            }
-            else if (key == 13) {  // Phím Enter
-                handleSelection();  // Xử lý lựa chọn
+            } else if (key == 13) {
+                break;
             }
         }
     }
 
-    void drawBox(const std::string& text) {
+    void drawBox(const std::string &text) {
         // Tính toán chiều dài của văn bản
         int length = text.length();
 
@@ -67,8 +64,8 @@ public:
 
         // Vẽ dòng chứa văn bản
         std::cout << "*  ";
-        setColor(2,0);
-        std::cout<< text;
+        setColor(2, 0);
+        std::cout << text;
         setColor(6, 0);
         std::cout << " *" << std::endl;
 
@@ -77,30 +74,8 @@ public:
         setColor(7, 0);
     }
 
-    // Hàm xử lý khi chọn một mục trong menu
-    void handleSelection() {
-        system("cls");  // Xóa màn hình (trên Windows)
-        switch (selectedIndex) {
-        case 0:
-            std::cout << "Hiển thị thông tin hàng hóa" << std::endl;
-            // Thêm chức năng hiển thị thông tin hàng hóa ở đây
-            break;
-        case 1:
-            std::cout << "Tìm kiếm thông tin hàng hóa" << std::endl;
-            // Thêm chức năng tìm kiếm hàng hóa ở đây
-            break;
-        case 2:
-            std::cout << "Đặt hàng" << std::endl;
-            // Thêm chức năng đặt hàng ở đây
-            break;
-        case 3:
-            std::cout << "Quản lý" << std::endl;
-            // Thêm chức năng quản lý ở đây
-            break;
-        }
-        std::cout << "Nhấn phím bất kỳ để quay lại menu chính..." << std::endl;
-        _getch();  // Chờ nhấn phím bất kỳ để quay lại menu chính
-    }
+    int getSelectedIndex() { return selectedIndex; }
+
 };
 
 #endif // DISPLAYMAIN_H
