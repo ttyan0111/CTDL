@@ -99,7 +99,8 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12
 			]
 		},
 		{
@@ -171,6 +172,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "src/service/LoginService.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/config/unordered_User.h",
 			"sourceGroupIndex" : 0
 		}
 	],

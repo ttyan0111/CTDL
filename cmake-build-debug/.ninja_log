@@ -1,13 +1,10 @@
 # ninja log v6
 1	330	7501895727691671	CMakeFiles/ctdlreal.dir/main.cpp.obj	e44fc6266d1ae6fd
-6	1927	7504560121016483	CMakeFiles/ctdlreal.dir/src/main.cpp.obj	dbfcc4bd3c031932
-2	187	7504573427430641	build.ninja	af9fdb273c9eb3ac
-1929	2038	7504560140250042	ctdlreal.exe	5ffc1bdb024f4f69
-5	1805	7504573654922491	CMakeFiles/ctdlreal.dir/src/main.cpp.obj	dbfcc4bd3c031932
-1805	1907	7504573672922625	ctdlreal.exe	5ffc1bdb024f4f69
-5	1817	7504574025544418	CMakeFiles/ctdlreal.dir/src/main.cpp.obj	dbfcc4bd3c031932
-1818	1920	7504574043674680	ctdlreal.exe	5ffc1bdb024f4f69
-6	1806	7504574815420325	CMakeFiles/ctdlreal.dir/src/main.cpp.obj	dbfcc4bd3c031932
-1806	1908	7504574833435966	ctdlreal.exe	5ffc1bdb024f4f69
 6	1899	7504575291410012	CMakeFiles/ctdlreal.dir/src/main.cpp.obj	dbfcc4bd3c031932
+2	187	7504634701935953	build.ninja	af9fdb273c9eb3ac
 1900	2009	7504575310354149	ctdlreal.exe	5ffc1bdb024f4f69
+5	2035	7504649293765475	CMakeFiles/ctdlreal.dir/src/main.cpp.obj	dbfcc4bd3c031932
+5	1915	7504653692148571	CMakeFiles/ctdlreal.dir/src/main.cpp.obj	dbfcc4bd3c031932
+1916	2007	7504653711256955	ctdlreal.exe	5ffc1bdb024f4f69
+6	1781	7504654094030779	CMakeFiles/ctdlreal.dir/src/main.cpp.obj	dbfcc4bd3c031932
+1782	1865	7504654111783880	ctdlreal.exe	5ffc1bdb024f4f69

@@ -41,7 +41,23 @@ public:
         importDate.display(); // Hiển thị ngày nhập
         std::cout << "Quantity: " << quantity << std::endl;
     }
+    [[nodiscard]] std::string getProductCode() const {return this->productCode;}
+    [[nodiscard]] std::string getProductName() const {return this->productName;}
+    [[nodiscard]] double getPrice() const{return this->price;}
+    friend std::ostream& operator<<(std::ostream& os, const GoodsModel& goods) {
+        os << "Product Code: " << goods.productCode << "\n"
+           << "Product Name: " << goods.productName << "\n"
+           << "Place of Origin: " << goods.placeOfOrigin << "\n"
+           << "Color: " << goods.color << "\n"
+           << "Price: " << goods.price << "\n"
+           << "Import Date: ";
+        goods.importDate.display();  // Hiển thị ngày nhập
+        os << "Quantity: " << goods.quantity << "\n";
+        return os;
+    }
+
 };
+
 
 
 #endif //GOODS_H

@@ -7,10 +7,21 @@
 #include "service/LoginService.h"
 #include <conio.h> // Thêm thư viện này vào
 
-int main() {
-    setupUtf8Environment();
-    DisplayMainController display;
-    display.start();
+#include "config/Unordered_User.h"
 
-    return 0;
+int main() {
+    // setupUtf8Environment();
+    // DisplayMainController display;
+    // display.start();
+    // return 0;
+    Unordered_User user;
+    DateTimeModel timeModel(12,11,2005);
+    GoodsModel goodsModel1("123","May tinh", "HCM", "Vang",
+          123, timeModel, 12);
+
+    user.insertFromCode("123",goodsModel1);
+    user.insertFromName("name",goodsModel1);
+    user.print();
+    char key = _getch();
+
 }
