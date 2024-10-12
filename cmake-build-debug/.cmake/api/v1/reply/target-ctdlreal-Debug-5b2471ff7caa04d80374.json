@@ -99,9 +99,7 @@
 				8,
 				9,
 				10,
-				11,
-				12,
-				13
+				11
 			]
 		},
 		{
@@ -126,7 +124,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/view/DisplayMain.h",
+			"path" : "src/view/Display.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -152,17 +150,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/controllers/FindInforGoods.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"path" : "src/controllers/DisplayInforGoods.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/controllers/OrderGoods.h",
 			"sourceGroupIndex" : 0
 		},
 		{

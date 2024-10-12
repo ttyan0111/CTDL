@@ -6,21 +6,16 @@
 #define DISPLAYMAINCONTROLLER_H
 
 #include "ManageController.h"
-#include "../view/DisplayMain.h"
+#include "../view/Display.h"
 #include <conio.h>
 class DisplayMainController {
 private:
-    DisplayMain displayMain;
+    Display displayMain;
     ManagerController managerController;
     bool isRunning;
-    bool isLogin = false;
 public:
     // Hàm khởi tạo
     DisplayMainController() : isRunning(true) {}
-
-    void setDisplayMain(DisplayMain displayMain) {
-        this->displayMain = displayMain; // Lưu trữ đối tượng DisplayMain
-    }
 
     void start() {
         while (isRunning) {
@@ -31,7 +26,7 @@ public:
 
     // Hàm xử lý khi chọn một mục trong menu
     void handleSelection() {
-        clearScreen(); // Xóa màn hình
+        system("cls");
         int selection = displayMain.getSelectedIndex();
         switch (selection) {
             case 0:
@@ -48,43 +43,24 @@ public:
                 break;
             case 3: {
                 std::cout << "Quản lý" << std::endl;
-                if(!isLogin) {
-                    if (managerController.login()) {
-                        std::cout << "Đăng nhập thành công!\n";
-                        isLogin=true;
-                        // Thực hiện các chức năng quản lý
-                    } else {
-                        std::cout << "Đăng nhập thất bại!\n";
-                    }
-                }
-                else {
-                    std::cout << "Đăng xuất\n";
-                }
+                managerController.start();
                 break;
             }
-
             case 4:
                 isRunning = false;
                 break;
             default:
                 std::cout << "Lựa chọn không hợp lệ!" << std::endl;
         }
-        std::cout << "Nhấn phím ESC để quay lại menu chính..." << std::endl;
-        char key =_getch(); // Chờ nhấn phím bất kỳ để quay lại menu chính
-        while (true) {
-            if (key == 27) {
-                break;
-            }
-        }
+        // std::cout << "Nhấn phím ESC để quay lại menu chính..." << std::endl;
+        // while (true) {
+        //     char key =_getch(); // Chờ nhấn phím bất kỳ để quay lại menu chính
+        //     if (key == 27) {
+        //         break;
+        //     }
+        //}
     }
 
-    void clearScreen() {
-#ifdef _WIN32
-        system("cls");
-#else
-        system("clear");
-#endif
-    }
 };
 
 #endif //DISPLAYMAINCONTROLLER_H

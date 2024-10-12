@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "models/GoodsModel.h"
-#include "view/DisplayMain.h"
+#include "view/Display.h"
 #include "config/UTF8.h"
 #include "controllers/DisplayMainController.h"
 #include "service/LoginService.h"
@@ -9,10 +9,8 @@
 
 int main() {
     setupUtf8Environment();
-    DisplayMain displayMain;
-    DisplayMainController displayMainController;
-    displayMainController.setDisplayMain(displayMain);
-    displayMainController.start();
+    DisplayMainController display;
+    display.start();
 
     return 0;
 }
