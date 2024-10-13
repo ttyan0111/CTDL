@@ -11,6 +11,7 @@
 
 
 void setColor(int textColor, int backgroundColor) {
+
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, (backgroundColor << 4) | textColor);
 }

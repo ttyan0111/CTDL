@@ -100,7 +100,10 @@
 				9,
 				10,
 				11,
-				12
+				12,
+				13,
+				14,
+				15
 			]
 		},
 		{
@@ -151,12 +154,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/controllers/DisplayInforGoods.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "src/controllers/ManageController.h",
+			"path" : "src/controllers/MenuManageController.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -166,7 +164,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/controllers/DisplayMainController.h",
+			"path" : "src/controllers/MenuMainController.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -176,7 +174,27 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/config/unordered_User.h",
+			"path" : "src/config/Unordered_User.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/service/ManageGoodsService.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/models/GoodsListModel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/view/DisplayGoods.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/controllers/MenuManage/MenuManageGoodsController.h",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -47,6 +47,59 @@ public:
         }
         throw std::runtime_error("Mã sản phẩm '" + key + "' không tồn tại.");
     }
+    bool findFromCode(const std::string& key) const {
+        auto it = goodsList_Code.find(key);
+        if (it != goodsList_Code.end()) {
+            return true;
+        }
+        return false;
+    }
+    // Xóa sản phẩm theo mã sản phẩm (key code)
+    void removeFromCode(const std::string& key) {
+        auto it = goodsList_Code.find(key);
+        if (it != goodsList_Code.end()) {
+            // Lấy tên sản phẩm trước khi xóa để xóa trong goodsList_Name
+            std::string productName = it->second.getProductName();
+
+            // Xóa khỏi goodsList_Code và goodsList_Name
+            goodsList_Code.erase(it);
+            goodsList_Name.erase(productName);
+
+            std::cout << "Đã xóa sản phẩm với mã: " << key << std::endl;
+        } else {
+            std::cerr << "Không tìm thấy sản phẩm với mã: " << key << std::endl;
+        }
+    }
+    void updateQuantityByCode(const std::string& key, int newQuantity) {
+        auto it = goodsList_Code.find(key);
+        if (it != goodsList_Code.end()) {
+            // Cập nhật số lượng trong goodsList_Code
+            it->second = GoodsModel(
+                it->second.getProductCode(),
+                it->second.getProductName(),
+                it->second.getPlaceOfOrigin(),
+                it->second.getColor(),
+                it->second.getPrice(),
+                it->second.getImportDate(),
+                newQuantity
+            );
+
+            // Đồng bộ cập nhật trong goodsList_Name
+            std::string productName = it->second.getProductName();
+            goodsList_Name[productName] = it->second;
+
+            std::cout << "Đã cập nhật số lượng cho mã: " << key << " thành " << newQuantity << std::endl;
+        } else {
+            std::cerr << "Không tìm thấy sản phẩm với mã: " << key << std::endl;
+        }
+    }
+    std::vector<GoodsModel> getGoodsList() const {
+        std::vector<GoodsModel> allGoods;
+        for (const auto& [key, value] : goodsList_Name) {
+            allGoods.push_back(value);
+        }
+        return allGoods;
+    }
 };
 
 

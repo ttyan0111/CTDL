@@ -11,10 +11,13 @@ add_executable(ctdlreal
         src/config/UTF8.h
         src/main.cpp
         src/config/Font_Color.h
-        src/controllers/DisplayInforGoods.h
-        src/controllers/ManageController.h
+        src/controllers/MenuManageController.h
         src/models/AccountModel.h
-        src/controllers/DisplayMainController.h
+        src/controllers/MenuMainController.h
         src/service/LoginService.h
         src/config/unordered_User.h
+        src/service/ManageGoodsService.h
+        src/models/GoodsListModel.h
+        src/view/DisplayGoods.h
+        src/controllers/MenuManage/MenuManageGoodsController.h
 )

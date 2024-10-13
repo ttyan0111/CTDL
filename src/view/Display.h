@@ -16,6 +16,7 @@ void drawBox(const std::string &text) {
     int length = text.length();
 
     // Vẽ dòng trên cùng
+
     setColor(6, 0);
     std::cout << "+" << std::string(length + 2, '*') << "+" << std::endl;
 
@@ -77,21 +78,29 @@ private:
         "Quản lý hàng hóa",
         "Về màn hình chính"
     };
+    std::vector<std::string> optionsManageGoods{
+        "Thêm hàng hóa",
+        "Xóa hàng hóa",
+        "Cập nhật số lượng hàng",
+        "Về màn hình chính"
+    };
     int selectedIndex = 0; // Chỉ số lựa chọn hiện tại
     int selectedManage = 0;
-
+    int selectedManageGoods = 0;
 public:
     // Hàm hiển thị menu chính
     void displayMenu() {
         display(options, selectedIndex, "MENU CHÍNH");
     }
-
     void displayManager() {
         display(optionsManage, selectedManage, "MENU QUẢN LÝ");
     }
-
+    void displayManagerGoods() {
+        display(optionsManageGoods, selectedManageGoods, "QUẢN LÝ HÀNG HÓA");
+    }
     int getSelectedIndex() const{ return selectedIndex; }
     int getSelectedManage() const{ return selectedManage; }
+    int getSelectedManageGoods() const{ return selectedManageGoods; }
 };
 
 

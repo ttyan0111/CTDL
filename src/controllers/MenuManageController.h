@@ -11,6 +11,9 @@
 #include "../view/Display.h"
 #include <windows.h> // Thêm thư viện này để sử dụng SetConsoleCursorPosition
 
+#include "MenuManage/MenuManageGoodsController.h"
+
+
 class ManagerController {
 private:
     Display display;
@@ -18,11 +21,66 @@ private:
     std::atomic<bool> isLocked; // Trạng thái khóa (atomic cho thread-safe)
     std::atomic<int> remainingTime; // Thời gian khóa còn lại (giây)
     bool isLogin = false;
-
+    MenuManagerGoodsController controller;
 public:
     ManagerController() : isLocked(false), remainingTime(0) {
     }
 
+    // Bắt đầu quản lý
+    void start() {
+        if (isLogin) {
+            while (true) {
+                display.displayManager();
+                if (handleSelection()) {
+                    break;
+                }
+            }
+        } else if (isCurrentlyLocked()) {
+        } else if (login()) {
+            while (true) {
+                display.displayManager();
+                if (handleSelection()) {
+                    break;
+                }
+            }
+        } else {
+            system("cls");
+            std::cout << "Đăng nhập thất bại!\n";
+            std::cout << "Nhấn phím ESC để quay lại menu chính..." << std::endl;
+            while (true) {
+                char key = _getch(); // Chờ nhấn phím bất kỳ để quay lại menu chính
+                if (key == 27) {
+                    break;
+                }
+            }
+        }
+    }
+    // Xử lý lựa chọn sau khi đăng nhập thành công
+    bool handleSelection() {
+        system("cls");
+        int selection = display.getSelectedManage();
+        switch (selection) {
+            case 0:
+                std::cout << "Xử lý đơn hàng\n";
+            break;
+            case 1:
+                std::cout << "Quản lý hàng hóa\n";
+                controller.start();
+                return false;
+            case 2:
+                return true;
+            default:
+                std::cout << "Lựa chọn không hợp lệ!\n";
+            return false;
+        }
+        // std::cout << "Nhấn ESC để quay lại menu quản lý...\n";
+        // while (true) {
+        //     char key = _getch();
+        //     if (key == 27) {
+        //         return false;
+        //     }
+        // }
+    }
     // Hàm chạy ngầm để đếm thời gian khóa
     void lockCountdown(int seconds) {
         isLocked = true;
@@ -113,60 +171,8 @@ public:
         return false;
     }
 
-    // Bắt đầu quản lý
-    void start() {
-        if (isLogin) {
-            while (true) {
-                display.displayManager();
-                if (handleSelection()) {
-                    break;
-                }
-            }
-        } else if (isCurrentlyLocked()) {
-        } else if (login()) {
-            while (true) {
-                display.displayManager();
-                if (handleSelection()) {
-                    break;
-                }
-            }
-        } else {
-            system("cls");
-            std::cout << "Đăng nhập thất bại!\n";
-            std::cout << "Nhấn phím ESC để quay lại menu chính..." << std::endl;
-            while (true) {
-                char key = _getch(); // Chờ nhấn phím bất kỳ để quay lại menu chính
-                if (key == 27) {
-                    break;
-                }
-            }
-        }
-    }
 
-    // Xử lý lựa chọn sau khi đăng nhập thành công
-    bool handleSelection() {
-        system("cls");
-        int selection = display.getSelectedManage();
-        switch (selection) {
-            case 0:
-                std::cout << "Xử lý đơn hàng\n";
-                break;
-            case 1:
-                std::cout << "Quản lý hàng hóa\n";
-                break;
-            case 2:
-                return true;
-            default:
-                std::cout << "Lựa chọn không hợp lệ!\n";
-        }
-        std::cout << "Nhấn ESC để quay lại menu quản lý...\n";
-        while (true) {
-            char key = _getch();
-            if (key == 27) {
-                return false;
-            }
-        }
-    }
+
 
     // Kiểm tra thông tin đăng nhập
     bool checkLogin() {

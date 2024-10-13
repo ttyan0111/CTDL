@@ -5,17 +5,16 @@
 #ifndef DISPLAYMAINCONTROLLER_H
 #define DISPLAYMAINCONTROLLER_H
 
-#include "ManageController.h"
+#include "MenuManageController.h"
 #include "../view/Display.h"
-#include <conio.h>
-class DisplayMainController {
+class MenuMainController {
 private:
     Display displayMain;
     ManagerController managerController;
     bool isRunning;
 public:
     // Hàm khởi tạo
-    DisplayMainController() : isRunning(true) {}
+    MenuMainController() : isRunning(true) {}
 
     void start() {
         while (isRunning) {

@@ -1,19 +1,20 @@
 //
 // Created by giang on 10/8/24.
-//
+// 
 
 #ifndef DATETIME_H
 #define DATETIME_H
 
 #include <iostream>
 #include <stdexcept> // Thêm thư viện để sử dụng std::invalid_argument
+#include <sstream>   // Thư viện để sử dụng std::stringstream
 
 class DateTimeModel {
 private:
     int day = 1, month = 1, year = 1900; // Giá trị mặc định
 
     // Kiểm tra tính hợp lệ của ngày
-    bool isValidDate(int day, int month, int year) {
+    static bool isValidDate(int day, int month, int year) {
         if (year < 1 || month < 1 || month > 12 || day < 1) {
             return false; // Ngày, tháng, năm không hợp lệ
         }
@@ -42,6 +43,7 @@ public:
         setMonth(month);
         setYear(year);
     }
+
     [[nodiscard]] int getDay() const { return this->day; }
     [[nodiscard]] int getMonth() const { return this->month; }
     [[nodiscard]] int getYear() const { return this->year; }
@@ -65,16 +67,45 @@ public:
     void setYear(int year) {
         if (year > 0) { // Có thể cho phép năm âm để xử lý dễ dàng hơn
             this->year = year;
-        }
-        else {
+        } else {
             throw std::invalid_argument("Invalid Year.");
         }
     }
 
-
-
     void display() const {
         std::cout << day << "/" << month << "/" << year << std::endl;
+    }
+
+    friend std::istream& operator>>(std::istream& is, DateTimeModel& dt) {
+        std::string date;
+        is >> date;
+
+        // Tách ngày, tháng, năm từ chuỗi
+        std::stringstream ss(date);
+        std::string token;
+        int d, m, y;
+
+        // Lấy ngày
+        std::getline(ss, token, '/');
+        d = std::stoi(token);
+        // Lấy tháng
+        std::getline(ss, token, '/');
+        m = std::stoi(token);
+        // Lấy năm
+        std::getline(ss, token);
+        y = std::stoi(token);
+
+        // Thiết lập các giá trị
+        dt.setDay(d);
+        dt.setMonth(m);
+        dt.setYear(y);
+
+        return is;
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const DateTimeModel& dt) {
+        os << dt.day << "/" << dt.month << "/" << dt.year;
+        return os;
     }
 };
 
