@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cau truc du lieu", "cau truc du lieu\cau truc du lieu.vcxproj", "{50EBC0E6-0A7F-4FA7-AD06-A1F6D126BF38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50EBC0E6-0A7F-4FA7-AD06-A1F6D126BF38}.Debug|x64.ActiveCfg = Debug|x64
+		{50EBC0E6-0A7F-4FA7-AD06-A1F6D126BF38}.Debug|x64.Build.0 = Debug|x64
+		{50EBC0E6-0A7F-4FA7-AD06-A1F6D126BF38}.Debug|x86.ActiveCfg = Debug|Win32
+		{50EBC0E6-0A7F-4FA7-AD06-A1F6D126BF38}.Debug|x86.Build.0 = Debug|Win32
+		{50EBC0E6-0A7F-4FA7-AD06-A1F6D126BF38}.Release|x64.ActiveCfg = Release|x64
+		{50EBC0E6-0A7F-4FA7-AD06-A1F6D126BF38}.Release|x64.Build.0 = Release|x64
+		{50EBC0E6-0A7F-4FA7-AD06-A1F6D126BF38}.Release|x86.ActiveCfg = Release|Win32
+		{50EBC0E6-0A7F-4FA7-AD06-A1F6D126BF38}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76C46758-E29A-400F-8061-BCB8C907685B}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\config">
+      <UniqueIdentifier>{3a764c28-60f5-450d-abd3-3eee28e8bd15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\controllers">
+      <UniqueIdentifier>{2638b99a-4df4-4e7a-a447-d36cd2a9eead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\controllers\MenuManage">
+      <UniqueIdentifier>{b65a354f-5570-4382-8b20-a489ce885d52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\models">
+      <UniqueIdentifier>{f91ebe17-a8a8-420c-b68f-599773caa71f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\service">
+      <UniqueIdentifier>{470e4d67-d4da-44e2-aa87-ba091ed3c358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\view">
+      <UniqueIdentifier>{2f836620-e8d1-4052-9388-47196665fe9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\file txt">
+      <UniqueIdentifier>{dd44db6f-1bc5-456d-94a9-78f80efa416d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header Files\config\Font_Color.h">
+      <Filter>Header Files\config</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\config\Unordered_User.h">
+      <Filter>Header Files\config</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\config\UTF8.h">
+      <Filter>Header Files\config</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\controllers\MenuMainController.h">
+      <Filter>Header Files\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\controllers\MenuManageController.h">
+      <Filter>Header Files\controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\controllers\MenuManage\MenuManageGoodsController.h">
+      <Filter>Header Files\controllers\MenuManage</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\models\AccountModel.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\models\DateTimeModel.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\models\GoodsListModel.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\models\GoodsModel.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\models\OrderModel.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\view\Display.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\view\DisplayGoods.h">
+      <Filter>Header Files\view</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\service\LoginService.h">
+      <Filter>Header Files\service</Filter>
+    </ClInclude>
+    <ClInclude Include="Header Files\service\ManageGoodsService.h">
+      <Filter>Header Files\service</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source Files\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resource Files\users.txt">
+      <Filter>Resource Files\file txt</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
