@@ -8,6 +8,7 @@
 #include <iostream>
 #include <stdexcept> // Thêm thư viện để sử dụng std::invalid_argument
 #include <sstream>   // Thư viện để sử dụng std::stringstream
+#include <string>
 
 class DateTimeModel {
 private:
@@ -104,7 +105,8 @@ public:
     }
 
     friend std::ostream& operator<<(std::ostream& os, const DateTimeModel& dt) {
-        os << dt.day << "/" << dt.month << "/" << dt.year;
+        std::string date = std::to_string(dt.day) + "/" + std::to_string(dt.month) + "/" + std::to_string(dt.year);
+        os << date;
         return os;
     }
 };

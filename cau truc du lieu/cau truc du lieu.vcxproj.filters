@@ -31,9 +31,6 @@
     <Filter Include="Header Files\view">
       <UniqueIdentifier>{2f836620-e8d1-4052-9388-47196665fe9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\file txt">
-      <UniqueIdentifier>{dd44db6f-1bc5-456d-94a9-78f80efa416d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\config\Font_Color.h">
@@ -89,7 +86,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Resource Files\users.txt">
-      <Filter>Resource Files\file txt</Filter>
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Resource Files\HangHoa.txt">
+      <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
 </Project>

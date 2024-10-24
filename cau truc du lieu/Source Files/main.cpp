@@ -6,6 +6,7 @@
 #include "../Header Files/config/UTF8.h"
 #include "../Header Files/controllers/MenuMainController.h"
 #include "../Header Files/config/Unordered_User.h"
+#include "../Header Files/models/GoodsListModel.h"
 
 int main() {
     setupUtf8Environment();
@@ -15,7 +16,7 @@ int main() {
     MenuMainController display;
     display.start();
     
-    return 0;
+    /*return 0;*/
     /* Unordered_User user;
      DateTimeModel timeModel(12,11,2005);
      GoodsModel goodsModel1("123","May tinh", "HCM", "Vang",
@@ -35,6 +36,6 @@ int main() {
     while (std::getline(read, line)) {
         std::cout << line << std::endl;
     }
-
     read.close();*/
+
 }

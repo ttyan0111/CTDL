@@ -1,3 +1,2 @@
-giang:giang
 admin:admin
-du:du
+giang:giang

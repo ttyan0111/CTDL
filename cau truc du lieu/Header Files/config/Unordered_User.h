@@ -94,6 +94,8 @@ public:
             std::cerr << "Không tìm thấy sản phẩm với mã: " << key << std::endl;
         }
     }
+
+
     std::vector<GoodsModel> getGoodsList() const {
         std::vector<GoodsModel> allGoods;
         for (const auto& [key, value] : goodsList_Name) {

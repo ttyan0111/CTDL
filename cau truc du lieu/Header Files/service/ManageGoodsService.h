@@ -16,7 +16,11 @@ public:
         goodsListModel = GoodsListModel();
     };
     void writeToFile() const {
-        goodsListModel.writeToFile("..\\fileLogin\\hanghoa.txt");
+        goodsListModel.writeToFile("Resource Files\HangHoa.txt");
+    }
+
+    void readFile() {
+        this->goodsListModel.readFile();
     }
 
     void addGoods( GoodsModel &goodsModel) {
