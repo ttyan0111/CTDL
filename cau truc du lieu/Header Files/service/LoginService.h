@@ -35,7 +35,7 @@ private:
 public:
     // Khởi tạo mặc định
     LoginService() {
-        loadUsersFromFile("users.txt"); // Đọc dữ liệu từ tệp
+        loadUsersFromFile("Resource Files/users.txt"); // Đọc dữ liệu từ tệp
     }
 
     bool authenticate(const std::string& username, const std::string& password) {
