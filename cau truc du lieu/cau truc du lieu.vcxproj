@@ -39,6 +39,7 @@
     <ClCompile Include="Source Files\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Resource Files\HangHoa.txt" />
     <Text Include="Resource Files\users.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

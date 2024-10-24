@@ -12,6 +12,7 @@
 class DateTimeModel {
 private:
     int day = 1, month = 1, year = 1900; // Giá trị mặc định
+    std::string date = "";
 
     // Kiểm tra tính hợp lệ của ngày
     static bool isValidDate(int day, int month, int year) {
@@ -51,7 +52,8 @@ public:
     void setDay(int day) {
         if (isValidDate(day, month, year)) {
             this->day = day;
-        } else {
+        }
+        else {
             throw std::invalid_argument("Invalid day for the current month/year.");
         }
     }
@@ -59,7 +61,8 @@ public:
     void setMonth(int month) {
         if (isValidDate(day, month, year)) {
             this->month = month;
-        } else {
+        }
+        else {
             throw std::invalid_argument("Invalid month.");
         }
     }
@@ -67,7 +70,8 @@ public:
     void setYear(int year) {
         if (year > 0) { // Có thể cho phép năm âm để xử lý dễ dàng hơn
             this->year = year;
-        } else {
+        }
+        else {
             throw std::invalid_argument("Invalid Year.");
         }
     }
@@ -76,31 +80,66 @@ public:
         std::cout << day << "/" << month << "/" << year << std::endl;
     }
 
-    friend std::istream& operator>>(std::istream& is, DateTimeModel& dt) {
-        std::string date;
-        is >> date;
+    bool checkDateFormat(const std::string date) {
+        // Kiểm tra định dạng ngày: phải có 2 ký tự số, 1 ký tự '/', 2 ký tự số, 1 ký tự '/', 4 ký tự số
+        if (date.length() != 10 || date[2] != '/' || date[5] != '/') {
+            std::cerr << "Đã xảy ra lỗi: Định dạng không đúng. Vui lòng nhập theo định dạng dd/MM/yyyy." << std::endl;
+            return false;
+        }
 
-        // Tách ngày, tháng, năm từ chuỗi
+        // Tách ngày, tháng, năm
         std::stringstream ss(date);
         std::string token;
         int d, m, y;
 
-        // Lấy ngày
-        std::getline(ss, token, '/');
-        d = std::stoi(token);
-        // Lấy tháng
-        std::getline(ss, token, '/');
-        m = std::stoi(token);
-        // Lấy năm
-        std::getline(ss, token);
-        y = std::stoi(token);
+        std::getline(ss, token, '/'); // Ngày
+        try {
+            d = std::stoi(token);
+        }
+        catch (const std::invalid_argument&) {
+            std::cerr << "Đã xảy ra lỗi: Định dạng không đúng." << std::endl;
+            return false; // Trả về false nếu có lỗi khi chuyển đổi
+        }
 
-        // Thiết lập các giá trị
-        dt.setDay(d);
-        dt.setMonth(m);
-        dt.setYear(y);
+        std::getline(ss, token, '/'); // Tháng
+        try {
+            m = std::stoi(token);
+        }
+        catch (const std::invalid_argument&) {
+            std::cerr << "Đã xảy ra lỗi: Định dạng không đúng." << std::endl;
+            return false; // Trả về false nếu có lỗi khi chuyển đổi
+        }
 
-        return is;
+        std::getline(ss, token); // Năm
+        try {
+            y = std::stoi(token);
+        }
+        catch (const std::invalid_argument&) {
+            std::cerr << "Đã xảy ra lỗi: Định dạng không đúng." << std::endl;
+            return false; // Trả về false nếu có lỗi khi chuyển đổi
+        }
+
+        // Kiểm tra tính hợp lệ của ngày
+        if (!isValidDate(d, m, y)) {
+            std::cerr << "Đã xảy ra lỗi: Ngày không hợp lệ." << std::endl;
+            return false; // Trả về false nếu ngày không hợp lệ
+        }
+
+        // Nếu ngày, tháng, năm hợp lệ, thiết lập giá trị
+        setDay(d);
+        setMonth(m);
+        setYear(y);
+        return true; // Trả về true nếu định dạng và giá trị hợp lệ
+    }
+
+    friend std::istream& operator>>(std::istream& is, DateTimeModel& dt) {
+        while (true) {
+            std::cout << "Ngày nhập(dd/MM/yyyy): ";
+            is >> dt.date;
+            if (dt.checkDateFormat(dt.date)) {
+                return is;
+            }
+        }
     }
 
     friend std::ostream& operator<<(std::ostream& os, const DateTimeModel& dt) {
