@@ -21,6 +21,7 @@ public:
 
     void readFile() {
         this->goodsListModel.readFile();
+        goodsListModel.writeToFile("Resource Files\\HangHoa.txt");
     }
 
     void addGoods( GoodsModel &goodsModel) {

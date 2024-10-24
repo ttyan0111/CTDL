@@ -59,13 +59,13 @@ C:\Users\ADMIN\source\repos\New folder\cau truc du lieu\Header Files\view\Displa
 C:\Users\ADMIN\source\repos\New folder\cau truc du lieu\Header Files\view\Display.h(99,58): warning C4566: character represented by universal-character-name '\u1EA2' cannot be represented in the current code page (1252)
   (compiling source file 'Source%20Files/main.cpp')
   
-C:\Users\ADMIN\source\repos\New folder\cau truc du lieu\Header Files\models\GoodsListModel.h(83,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\New folder\cau truc du lieu\Header Files\models\GoodsListModel.h(74,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Source%20Files/main.cpp')
   
-C:\Users\ADMIN\source\repos\New folder\cau truc du lieu\Header Files\models\GoodsListModel.h(92,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\New folder\cau truc du lieu\Header Files\models\GoodsListModel.h(83,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Source%20Files/main.cpp')
   
-C:\Users\ADMIN\source\repos\New folder\cau truc du lieu\Header Files\models\GoodsListModel.h(95,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\New folder\cau truc du lieu\Header Files\models\GoodsListModel.h(86,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Source%20Files/main.cpp')
   
 C:\Users\ADMIN\source\repos\New folder\cau truc du lieu\Header Files\service\ManageGoodsService.h(19,36): warning C4129: 'H': unrecognized character escape sequence

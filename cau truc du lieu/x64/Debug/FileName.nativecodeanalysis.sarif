@@ -1,0 +1,193 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'GoodsModel::quantity' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/File_User/CTDLPROJECT/cau truc du lieu/Header Files/models/GoodsModel.h"
+                },
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GoodsModel::{ctor}",
+                  "decoratedName": "??0GoodsModel@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "GoodsModel::quantity"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'GoodsModel::price' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/File_User/CTDLPROJECT/cau truc du lieu/Header Files/models/GoodsModel.h"
+                },
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "GoodsModel::{ctor}",
+                  "decoratedName": "??0GoodsModel@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "GoodsModel::price"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.41.34120.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///E:/File_User/CTDLPROJECT/cau truc du lieu/Header Files/models/GoodsModel.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "98bb21e32f52ca606ab4e2ea18a2933011bf4907790597c3196b33644d56503a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/filename.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "aa561528d9726f8f50210ec420a91bb53db9561202ccb12662075559c867f985"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/models/datetimemodel.h"
+          },
+          "hashes": {
+            "sha-256": "01a9f895d4d536d4e19c93490dec071815406fe448ed995880fe0b95441de645"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/view/display.h"
+          },
+          "hashes": {
+            "sha-256": "93d62328f4a686ead53dfea7e271a427111cc461145a5b0f078b91e6203242f3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/config/font_color.h"
+          },
+          "hashes": {
+            "sha-256": "08167e53a267f60a82534b008aba1ed57c0fa977ba100c5ca00b7a8a036c9973"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/config/utf8.h"
+          },
+          "hashes": {
+            "sha-256": "0b4f6fb7a811ea0d34faa0a20b703700e9aac1451ab4777ebc48733bd4147da9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/controllers/menumaincontroller.h"
+          },
+          "hashes": {
+            "sha-256": "ac7c7365b027185ae2a9654ed061368cc69fd6e1b32101013b684527bb885ab0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/controllers/menumanagecontroller.h"
+          },
+          "hashes": {
+            "sha-256": "a2a6d7c52af9476e5b40a4836ab9b7da1489eae455c97a5e38c8d355915df8e9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/service/loginservice.h"
+          },
+          "hashes": {
+            "sha-256": "203113de8b54c252e8c8e7dfa13525df297e47c24685cc57805ebed8148e9423"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/controllers/menumanage/menumanagegoodscontroller.h"
+          },
+          "hashes": {
+            "sha-256": "69ba6f70266761343bb502b4d5d38b53f98e2decd4df7533782262703e5db93b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/service/managegoodsservice.h"
+          },
+          "hashes": {
+            "sha-256": "7a817dbdce7dcbb0f82e05842c61ad7348fe380353e69e74f79deae886009db3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/models/goodslistmodel.h"
+          },
+          "hashes": {
+            "sha-256": "548dcf03cb9950a270f1656a338ee1a3fd0237bbef9e18a755366d451d160143"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///e:/file_user/ctdlproject/cau truc du lieu/header files/config/unordered_user.h"
+          },
+          "hashes": {
+            "sha-256": "ca146f4291d5ae4a7a3e8701a5cdd263a00361465b101376b47d2b74940af0b8"
+          }
+        }
+      ]
+    }
+  ]
+}

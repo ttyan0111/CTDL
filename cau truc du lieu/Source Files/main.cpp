@@ -1,17 +1,16 @@
-#include <iostream>
+﻿#include <iostream>
 #include <fstream>
-
 #include "../Header Files/models/GoodsModel.h"
 #include "../Header Files/view/Display.h"
 #include "../Header Files/config/UTF8.h"
 #include "../Header Files/controllers/MenuMainController.h"
 #include "../Header Files/config/Unordered_User.h"
-#include "../Header Files/models/GoodsListModel.h"
+#include <conio.h> // Dùng cho hàm getch() để bắt phím (trên Windows)
 
 int main() {
     setupUtf8Environment();
-    /*if (cc()) {
-        std::cout << "\n Hello m�ng s�ng ��ng";
+    /*if (true) {
+        std::cout << "\n Hello máng sáng đáng";
     }*/
     MenuMainController display;
     display.start();
@@ -27,7 +26,7 @@ int main() {
      user.print();
      char key = _getch();*/
 
-    /*std::ifstream read("Resource Files/users.txt");
+    /*std::ifstream read("Resource Files/HangHoa.txt");
     if (read.is_open()) {
         std::cout << "check";
     }

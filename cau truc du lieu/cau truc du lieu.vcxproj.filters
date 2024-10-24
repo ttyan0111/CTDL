@@ -85,11 +85,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Resource Files\HangHoa.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
     <Text Include="Resource Files\users.txt">
       <Filter>Resource Files</Filter>
+<<<<<<< HEAD
     </Text>
     <Text Include="Resource Files\HangHoa.txt">
       <Filter>Resource Files</Filter>
+=======
+>>>>>>> e51932b6ccbf73d7b8039672b47f3508ab36617d
     </Text>
   </ItemGroup>
 </Project>

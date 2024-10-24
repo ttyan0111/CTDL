@@ -7,7 +7,7 @@
 
 
 #include <iostream>
-
+#include <conio.h> // Dùng cho hàm getch() để bắt phím (trên Windows)
 #include "../../service/ManageGoodsService.h"
 #include "../../view/Display.h"
 
@@ -36,10 +36,11 @@ public:
         switch (selection) {
             case 0:
                 std::cout << "Thêm hàng hóa\n";
-
                 std:: cin >> goodsModel;
                 goodsService.addGoods(goodsModel);
                 goodsService.writeToFile();
+                char key;
+                key = _getch();
                 return false;
             case 1:
                 std::cout << "Xóa hàng hóa\n";
