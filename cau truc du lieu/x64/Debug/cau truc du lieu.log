@@ -71,5 +71,14 @@ E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(99,58): wa
 E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(99,58): warning C4566: character represented by universal-character-name '\u00DD' cannot be represented in the current code page (1258)
   (compiling source file 'Source%20Files/main.cpp')
   
+E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\models\GoodsListModel.h(75,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Source%20Files/main.cpp')
+  
+E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\models\GoodsListModel.h(84,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Source%20Files/main.cpp')
+  
+E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\models\GoodsListModel.h(87,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Source%20Files/main.cpp')
+  
 E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\controllers\MenuManageController.h(83,1): warning C4715: 'ManagerController::handleSelection': not all control paths return a value
   cau truc du lieu.vcxproj -> E:\File_User\CTDLPROJECT\x64\Debug\cau truc du lieu.exe

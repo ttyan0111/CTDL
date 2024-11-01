@@ -69,9 +69,6 @@
     <ClInclude Include="Header Files\view\Display.h">
       <Filter>Header Files\view</Filter>
     </ClInclude>
-    <ClInclude Include="Header Files\view\DisplayGoods.h">
-      <Filter>Header Files\view</Filter>
-    </ClInclude>
     <ClInclude Include="Header Files\service\LoginService.h">
       <Filter>Header Files\service</Filter>
     </ClInclude>

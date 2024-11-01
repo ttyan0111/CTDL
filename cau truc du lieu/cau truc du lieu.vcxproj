@@ -33,7 +33,6 @@
     <ClInclude Include="Header Files\service\LoginService.h" />
     <ClInclude Include="Header Files\service\ManageGoodsService.h" />
     <ClInclude Include="Header Files\view\Display.h" />
-    <ClInclude Include="Header Files\view\DisplayGoods.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source Files\main.cpp" />

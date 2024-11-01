@@ -71,6 +71,11 @@ public:
             std::cerr << "Không tìm thấy sản phẩm với mã: " << key << std::endl;
         }
     }
+    // xóa toàn bộ dữ liệu.
+    void removeAll() {
+        this->goodsList_Code.clear();
+        this->goodsList_Code.clear();
+    }
     void updateQuantityByCode(const std::string& key, int newQuantity) {
         auto it = goodsList_Code.find(key);
         if (it != goodsList_Code.end()) {
@@ -101,6 +106,7 @@ public:
         }
         return allGoods;
     }
+    std::unordered_map<std::string, GoodsModel> getGoodsList_Name() { return this->goodsList_Name; }
 };
 
 

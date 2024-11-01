@@ -7,10 +7,12 @@
 
 #include "MenuManageController.h"
 #include "../view/Display.h"
+
 class MenuMainController {
 private:
     Display displayMain;
     ManagerController managerController;
+    GoodsListModel gg;
     bool isRunning;
 public:
     // Hàm khởi tạo
@@ -31,7 +33,9 @@ public:
             case 0:
                 std::cout << "Hiển thị thông tin hàng hóa" << std::endl;
                 // Thêm chức năng hiển thị thông tin hàng hóa ở đây
-                break;
+          
+                gg.showDataAsTable();
+                system("pause");
             case 1:
                 std::cout << "Tìm kiếm thông tin hàng hóa" << std::endl;
                 // Thêm chức năng tìm kiếm hàng hóa ở đây

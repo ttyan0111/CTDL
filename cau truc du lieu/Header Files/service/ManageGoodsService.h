@@ -30,6 +30,11 @@ public:
     void updateQuantityGoods( std::string &code, int quantity) {
         goodsListModel.updateQuantityGoods(code, quantity);
     }
+    void readFile() {
+        this->goodsListModel.readFile();
+        goodsListModel.writeToFile("Resource Files\\HangHoa.txt");
+    }
+
 };
 
 

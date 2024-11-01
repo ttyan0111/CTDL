@@ -16,6 +16,7 @@
 #include <sstream>   // For std::stringstream
 #include "../models/GoodsModel.h"
 
+
 // Set cursor position
 void setCursorPosition(int x, int y) {
     COORD coord = {static_cast<SHORT>(x), static_cast<SHORT>(y)};
