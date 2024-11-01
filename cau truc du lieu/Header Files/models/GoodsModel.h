@@ -16,9 +16,9 @@ private:
 	std::string productName;
 	std::string placeOfOrigin;
 	std::string color;
-	double price;
+	double price{};
 	DateTimeModel importDate; // Sử dụng lớp DateTime
-	int quantity;
+	int quantity{};
 
 public:
 	// Constructor
@@ -32,8 +32,7 @@ public:
 		color(std::move(color)),
 		price(price),
 		importDate(import_date),
-		quantity(quantity) {
-	}
+		quantity(quantity) {}
 
 	void displayInfo() const {
 		std::cout << "Product Code: " << productCode << "\n"
@@ -51,14 +50,13 @@ public:
 			<< goods.productName << ":"
 			<< goods.placeOfOrigin << ":"
 			<< goods.color << ":"
-			<< goods.price << ":"
-			<< goods.importDate << ":" // Hiển thị ngày nhập
-			<< goods.quantity << ":";
+			<< goods.price << ":";
+		os << goods.importDate << ":";
+		os << goods.quantity << ":";
 		return os;
 	}
 
 	friend std::istream& operator>>(std::istream& is, GoodsModel& goods) {
-
 		while (true) {
 			std::cout << "Mã(4 kí tự): ";
 			is >> goods.productCode;
@@ -71,35 +69,31 @@ public:
 		}
 		is.ignore();
 		std::cout << "Tên sản phẩm: ";
-		getline(is, goods.productName);
+		std::getline(is, goods.productName);
 		std::cout << "Nơi sản xuất: ";
-		getline(is, goods.placeOfOrigin);
+		std::getline(is, goods.placeOfOrigin);
 		std::cout << "Màu sắc: ";
-		getline(is, goods.color);
+		std::getline(is, goods.color);
+
 		while (true) {
-			try {
-				std::cout << "Giá: ";
-				std::cin >> goods.price;
-
-				break; // Thoát vòng lặp nếu nhập thành công
+			std::cout << "Giá: ";
+			if (is >> goods.price) {
+				break; // Nếu nhập giá hợp lệ
 			}
-			catch (const std::exception& e) {
-				std::cerr << "Hãy nhập theo đúng định dạng! (" << e.what() << ")" << std::endl;
-
-				// Xóa trạng thái lỗi và xóa đầu vào không hợp lệ
-				std::cin.clear(); // Xóa trạng thái lỗi
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Xóa dòng nhập
+			else {
+				std::cout << "Giá phải là số hợp lệ!\n";
+				is.clear(); // Xóa lỗi
+				is.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Xóa dòng nhập sai
 			}
 		}
-
-		is >> goods.importDate;
+		is >> goods.importDate; // Giả sử importDate đã có operator >>
 		std::cout << "Số lượng: ";
 		is >> goods.quantity;
 
 		return is;
 	}
 
-
+	// Getters và Setters
 	[[nodiscard]] std::string getProductCode() const { return this->productCode; }
 	[[nodiscard]] std::string getProductName() const { return this->productName; }
 	[[nodiscard]] double getPrice() const { return this->price; }
@@ -107,9 +101,8 @@ public:
 	[[nodiscard]] std::string getColor() const { return this->color; }
 	[[nodiscard]] DateTimeModel getImportDate() const { return this->importDate; }
 	int getQuantity() const { return this->quantity; }
-	void setQuantity(int quantity) {
-		this->quantity = quantity;
-	}
+
+	void setQuantity(int quantity) { this->quantity = quantity; }
 	void setProductCode(std::string product_code) { this->productCode = std::move(product_code); }
 	void setProductName(std::string product_name) { this->productName = std::move(product_name); }
 	void setPrice(double price) { this->price = price; }
@@ -118,5 +111,4 @@ public:
 	void setImportDate(DateTimeModel import_date) { this->importDate = import_date; }
 };
 
-
-#endif //GOODS_H
+#endif // GOODS_H

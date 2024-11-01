@@ -12,7 +12,7 @@ class MenuMainController {
 private:
     Display displayMain;
     ManagerController managerController;
-    GoodsListModel gg;
+    ManageGoodsService goodsService;
     bool isRunning;
 public:
     // Hàm khởi tạo
@@ -33,12 +33,12 @@ public:
             case 0:
                 std::cout << "Hiển thị thông tin hàng hóa" << std::endl;
                 // Thêm chức năng hiển thị thông tin hàng hóa ở đây
-          
-                gg.showDataAsTable();
+                goodsService.showDataAsTable();
                 system("pause");
             case 1:
                 std::cout << "Tìm kiếm thông tin hàng hóa" << std::endl;
-                // Thêm chức năng tìm kiếm hàng hóa ở đây
+                goodsService.find();
+                system("pause");
                 break;
             case 2:
                 std::cout << "Đặt hàng" << std::endl;
@@ -55,13 +55,6 @@ public:
             default:
                 std::cout << "Lựa chọn không hợp lệ!" << std::endl;
         }
-        // std::cout << "Nhấn phím ESC để quay lại menu chính..." << std::endl;
-        // while (true) {
-        //     char key =_getch(); // Chờ nhấn phím bất kỳ để quay lại menu chính
-        //     if (key == 27) {
-        //         break;
-        //     }
-        //}
     }
 
 };

@@ -68,21 +68,21 @@ class Display {
 private:
     std::vector<std::string> options{
 
-        "Hiển thị thông tin hàng hóa",
-        "Tìm kiếm thông tin hàng hóa",
-        "Đặt hàng",
-        "Quản lý"
+        "Hien thi thong tin hang hoa",
+        "Tim kiem thong tin hang hoa",
+        "Dat hang",
+        "Quan ly"
     };
     std::vector<std::string> optionsManage{
-        "Xử lý đơn hàng",
-        "Quản lý hàng hóa",
-        "Về màn hình chính"
+        "Xu ly don hang",
+        "Quan ly hang hoa",
+        "Ve man hinh chinh"
     };
     std::vector<std::string> optionsManageGoods{
-        "Thêm hàng hóa",
-        "Xóa hàng hóa",
-        "Cập nhật số lượng hàng",
-        "Về màn hình chính"
+        "Them hang hoa",
+        "Xoa hang hoa",
+        "Cap nhat so luong",
+        "Ve man hinh chinh"
     };
     int selectedIndex = 0; // Chỉ số lựa chọn hiện tại
     int selectedManage = 0;
@@ -90,13 +90,13 @@ private:
 public:
     // Hàm hiển thị menu chính
     void displayMenu() {
-        display(options, selectedIndex, "MENU CHÍNH");
+        display(options, selectedIndex, "MENU CHINH");
     }
     void displayManager() {
-        display(optionsManage, selectedManage, "MENU QUẢN LÝ");
+        display(optionsManage, selectedManage, "MENU QUAN LY");
     }
     void displayManagerGoods() {
-        display(optionsManageGoods, selectedManageGoods, "QUẢN LÝ HÀNG HÓA");
+        display(optionsManageGoods, selectedManageGoods, "QUAN LY HANG HOA");
     }
     int getSelectedIndex() const{ return selectedIndex; }
     int getSelectedManage() const{ return selectedManage; }

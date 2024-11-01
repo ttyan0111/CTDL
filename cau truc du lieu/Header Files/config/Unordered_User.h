@@ -15,13 +15,14 @@ private:
 public:
     // Thêm sản phẩm vào cả hai danh sách theo tên và mã
     void insertFromName(const std::string& key, const GoodsModel& value) {
-        goodsList_Code[key] = value;
-        goodsList_Name[value.getProductName()] = value;
+        
+        goodsList_Name[key] = value;
+        goodsList_Code[value.getProductCode()] = value;
     }
 
     void insertFromCode(const std::string& key, const GoodsModel& value) {
-        goodsList_Name[key] = value;
-        goodsList_Code[value.getProductCode()] = value;
+        goodsList_Code[key] = value;
+        goodsList_Name[value.getProductName()] = value;
     }
 
     // In danh sách hàng hóa theo tên
@@ -63,9 +64,9 @@ public:
             std::string productName = it->second.getProductName();
 
             // Xóa khỏi goodsList_Code và goodsList_Name
-            goodsList_Code.erase(it);
+            goodsList_Code.erase(key);
             goodsList_Name.erase(productName);
-
+            
             std::cout << "Đã xóa sản phẩm với mã: " << key << std::endl;
         } else {
             std::cerr << "Không tìm thấy sản phẩm với mã: " << key << std::endl;
@@ -74,7 +75,7 @@ public:
     // xóa toàn bộ dữ liệu.
     void removeAll() {
         this->goodsList_Code.clear();
-        this->goodsList_Code.clear();
+        this->goodsList_Name.clear();
     }
     void updateQuantityByCode(const std::string& key, int newQuantity) {
         auto it = goodsList_Code.find(key);

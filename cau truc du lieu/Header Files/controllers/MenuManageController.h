@@ -181,7 +181,19 @@ public:
         std::cout << "Nhập tên đăng nhập: ";
         std::getline(std::cin, username);
         std::cout << "Nhập mật khẩu: ";
-        std::getline(std::cin, password);
+        char ch;
+        while ((ch = _getch()) != 13) { // 13 là mã ASCII của phím Enter
+            if (ch == 8) { // 8 là mã ASCII của phím Backspace
+                if (!password.empty()) {
+                    std::cout << "\b \b"; // Xóa ký tự cuối cùng của dấu *
+                    password.pop_back();
+                }
+            }
+            else {
+                password += ch;
+                std::cout << '*'; // Hiển thị dấu *
+            }
+        }
         return loginService.authenticate(username, password);
     }
 };

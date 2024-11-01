@@ -5,79 +5,13 @@ E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\config\Font_Color.h(32,17
 E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(16,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Source%20Files/main.cpp')
   
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(71,9): warning C4566: character represented by universal-character-name '\u1EC3' cannot be represented in the current code page (1258)
+E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\models\GoodsListModel.h(100,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Source%20Files/main.cpp')
   
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(71,9): warning C4566: character represented by universal-character-name '\u1ECB' cannot be represented in the current code page (1258)
+E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\models\GoodsListModel.h(109,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Source%20Files/main.cpp')
   
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(72,9): warning C4566: character represented by universal-character-name '\u00EC' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(72,9): warning C4566: character represented by universal-character-name '\u1EBF' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(73,9): warning C4566: character represented by universal-character-name '\u1EB7' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(74,9): warning C4566: character represented by universal-character-name '\u1EA3' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(74,9): warning C4566: character represented by universal-character-name '\u00FD' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(77,9): warning C4566: character represented by universal-character-name '\u1EED' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(77,9): warning C4566: character represented by universal-character-name '\u00FD' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(78,9): warning C4566: character represented by universal-character-name '\u1EA3' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(78,9): warning C4566: character represented by universal-character-name '\u00FD' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(79,9): warning C4566: character represented by universal-character-name '\u1EC1' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(79,9): warning C4566: character represented by universal-character-name '\u00EC' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(84,9): warning C4566: character represented by universal-character-name '\u1EAD' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(84,9): warning C4566: character represented by universal-character-name '\u1ED1' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(84,9): warning C4566: character represented by universal-character-name '\u1EE3' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(85,9): warning C4566: character represented by universal-character-name '\u1EC1' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(85,9): warning C4566: character represented by universal-character-name '\u00EC' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(96,48): warning C4566: character represented by universal-character-name '\u1EA2' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(96,48): warning C4566: character represented by universal-character-name '\u00DD' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(99,58): warning C4566: character represented by universal-character-name '\u1EA2' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\view\Display.h(99,58): warning C4566: character represented by universal-character-name '\u00DD' cannot be represented in the current code page (1258)
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\models\GoodsListModel.h(75,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\models\GoodsListModel.h(84,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'Source%20Files/main.cpp')
-  
-E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\models\GoodsListModel.h(87,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\models\GoodsListModel.h(112,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'Source%20Files/main.cpp')
   
 E:\File_User\CTDLPROJECT\cau truc du lieu\Header Files\controllers\MenuManageController.h(83,1): warning C4715: 'ManagerController::handleSelection': not all control paths return a value

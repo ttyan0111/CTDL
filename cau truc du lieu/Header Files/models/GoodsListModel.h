@@ -12,6 +12,7 @@
 #include "../config/Unordered_User.h"
 #include "DateTimeModel.h"
 #include <iomanip> // sử dụng setWW() căn độ rộng cho từng cột table.
+#include <vector>
 
 
 class GoodsListModel {
@@ -20,24 +21,26 @@ private:
 
 public:
 	// Hàm thêm hàng hóa, kiểm tra mã hàng và thêm vào danh sách
-	void insertGoods(const GoodsModel& goodsModel) {
+	bool insertGoods(const GoodsModel& goodsModel) {
 
 		if (!user.findFromCode(goodsModel.getProductCode())) {
 			try {
 				user.insertFromName(goodsModel.getProductName(), goodsModel);
+                return true;
 			}
 			catch (const std::invalid_argument& e) {
 				std::cerr << "Lỗi: " << e.what() << std::endl;  // Xử lý ngoại lệ
+                return false;
 			}
 		}
 		else {
-			std::cout << "Mã hàng đã tồn tại" << std::endl;
+            return false;
 		}
 
 	}
     // hiển thị dữ liệu dưới dạng bảng.
     void showDataAsTable() {
-        readFile();
+
         // hiển thị tên các cột trong của bảng.
         std::cout << std::left << std::setw(9) << "Ma Hang"
             << std::left << std::setw(10) << "Ten Hang"
@@ -51,6 +54,28 @@ public:
         // để dể in lên console.
         std::vector<GoodsModel> goodslist = user.getGoodsList();
 
+        // hiển thị dử liệu của từng thông tin của goods lên cột tương ứng.
+        for (auto goods : goodslist) {
+            std::cout << std::left << std::setw(9) << goods.getProductCode()
+                << std::left << std::setw(10) << goods.getProductName()
+                << std::left << std::setw(14) << goods.getPlaceOfOrigin()
+                << std::left << std::setw(9) << goods.getColor()
+                << std::left << std::setw(10) << goods.getPrice()
+                << std::left << std::setw(16) << goods.getImportDate()
+                << std::left << std::setw(10) << goods.getQuantity() << std::endl;
+        }
+
+    }
+    void showDataAsTable(std::vector<GoodsModel>&goodslist) {
+
+        // hiển thị tên các cột trong của bảng.
+        std::cout << std::left << std::setw(9) << "Ma Hang"
+            << std::left << std::setw(10) << "Ten Hang"
+            << std::left << std::setw(14) << "Noi San Xuat"
+            << std::left << std::setw(9) << "Mau Sac"
+            << std::left << std::setw(10) << "Gia Ban"
+            << std::left << std::setw(16) << "Ngay Nhap Khoa"
+            << std::left << std::setw(10) << "So Luong" << "\n";
         // hiển thị dử liệu của từng thông tin của goods lên cột tương ứng.
         for (auto goods : goodslist) {
             std::cout << std::left << std::setw(9) << goods.getProductCode()
@@ -132,7 +157,7 @@ public:
 
 	// Hàm ghi dữ liệu vào file
 	void writeToFile(const std::string& filename) const {
-		std::ofstream outFile(filename, std::ios::app);
+		std::ofstream outFile(filename, std::ios::trunc);
 
 
 		// Kiểm tra nếu file mở thành công
@@ -157,8 +182,17 @@ public:
 				<< goods.getQuantity() << std::endl; // Adjust the output format as needed
 		}
 		outFile.close(); // Đóng file
-		std::cout << "Dữ liệu đã được lưu vào file: " << filename << std::endl;
 	}
+
+    void findGoods(const std::string name) {
+        std::vector<GoodsModel>tmp;
+        for (auto x : user.getGoodsList()) {
+            if (x.getProductName() == name) {
+                tmp.push_back(x);
+            }
+        }
+        showDataAsTable(tmp);
+    }
 };
 
-#endif //GOODSLISTMODEL_H
+#endif //GOODSLISTMODEL_H1
