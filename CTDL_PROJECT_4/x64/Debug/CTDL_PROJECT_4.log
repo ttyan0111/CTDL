@@ -1,0 +1,33 @@
+﻿  LoginService.cpp
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\LoginService.cpp(9,22): warning C4566: character represented by universal-character-name '\u1EC3' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\LoginService.cpp(9,22): warning C4566: character represented by universal-character-name '\u1EDF' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\LoginService.cpp(9,22): warning C4566: character represented by universal-character-name '\u1EC7' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\LoginService.cpp(33,22): warning C4566: character represented by universal-character-name '\u1EAD' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\LoginService.cpp(33,22): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\LoginService.cpp(33,22): warning C4566: character represented by universal-character-name '\u1EA1' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\LoginService.cpp(37,22): warning C4566: character represented by universal-character-name '\u1EAD' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\LoginService.cpp(37,22): warning C4566: character represented by universal-character-name '\u1EA9' cannot be represented in the current code page (1258)
+  ManagerGoodsService.cpp
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(21,22): warning C4566: character represented by universal-character-name '\u00E3' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(21,22): warning C4566: character represented by universal-character-name '\u1ED3' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(21,22): warning C4566: character represented by universal-character-name '\u1EA1' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(37,18): warning C4566: character represented by universal-character-name '\u1EAD' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(37,18): warning C4566: character represented by universal-character-name '\u00E3' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(41,22): warning C4566: character represented by universal-character-name '\u1EAD' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(41,22): warning C4566: character represented by universal-character-name '\u1ED1' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(41,22): warning C4566: character represented by universal-character-name '\u1EE3' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(41,22): warning C4566: character represented by universal-character-name '\u1EA7' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(41,22): warning C4566: character represented by universal-character-name '\u1ED5' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(48,26): warning C4566: character represented by universal-character-name '\u1ED7' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(48,26): warning C4566: character represented by universal-character-name '\u00F2' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(48,26): warning C4566: character represented by universal-character-name '\u1EAD' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(48,26): warning C4566: character represented by universal-character-name '\u1ED1' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(75,18): warning C4566: character represented by universal-character-name '\u1EAD' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(75,18): warning C4566: character represented by universal-character-name '\u1EA7' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\ManagerGoodsService.cpp(75,18): warning C4566: character represented by universal-character-name '\u00EC' cannot be represented in the current code page (1258)
+  OrderModelService.cpp
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\OrderModelService.cpp(26,22): warning C4566: character represented by universal-character-name '\u1EC3' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\OrderModelService.cpp(26,22): warning C4566: character represented by universal-character-name '\u1ECD' cannot be represented in the current code page (1258)
+E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\CTDL_PROJECT_4\OrderModelService.cpp(26,22): warning C4566: character represented by universal-character-name '\u1EE3' cannot be represented in the current code page (1258)
+  Generating Code...
+  CTDL_PROJECT_4.vcxproj -> E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\x64\Debug\CTDL_PROJECT_4.exe
