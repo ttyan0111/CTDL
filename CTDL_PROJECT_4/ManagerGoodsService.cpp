@@ -18,7 +18,7 @@ void ManageGoodsService::addGoods(GoodsModel& goodsModel) {
         writeToFile();
     }
     else {
-        std::cout << "Mã hàng tồn tại" << std::endl;
+        std::cout << "Ma hang ton tai" << std::endl;
     }
 }
 
@@ -34,18 +34,18 @@ void ManageGoodsService::updateQuantityGoods() {
     showDataAsTable();
     std::string code;
     int quantity;
-    std::cout << "\nNhập mã hàng: ";
+    std::cout << "\nNhap ma hang: ";
     std::cin >> code;
 
     while (true) {
-        std::cout << "Nhập số lượng cần thay đổi: ";
+        std::cout << "Nhap so luong can thay doi: ";
         std::cin >> quantity;
 
         // Kiểm tra nếu nhập vào không phải là số nguyên
         if (std::cin.fail()) {
             std::cin.clear();  // Xóa trạng thái lỗi
             std::cin.ignore(10000, '\n');  // Bỏ qua phần nhập không hợp lệ
-            std::cout << "Lỗi: Vui lòng nhập số nguyên.\n";
+            std::cout << "Loi: Vui long nhap so nguyen.\n";
         }
         else {
             break;  // Thoát vòng lặp nếu nhập hợp lệ
@@ -72,7 +72,7 @@ void ManageGoodsService::showDataAsTable() {
 // Tìm kiếm hàng hóa theo tên
 void ManageGoodsService::find() {
     goodsListModel.readFile();
-    std::cout << "Nhập tên cần tìm: ";
+    std::cout << "Nhap ten can tim: ";
     std::string name;
     std::getline(std::cin, name);
     goodsListModel.findGoods(name);

@@ -1,5 +1,5 @@
 ﻿#include "Font_Color.h"
-#include <windows.h>
+
 #include <iostream>
 
 void setColor(int textColor, int backgroundColor) {
@@ -7,14 +7,7 @@ void setColor(int textColor, int backgroundColor) {
     SetConsoleTextAttribute(hConsole, (backgroundColor << 4) | textColor);
 }
 
-void setFontSize(int fontSize) {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    CONSOLE_FONT_INFOEX cfi;
-    cfi.cbSize = sizeof(cfi);
-    GetCurrentConsoleFontEx(hConsole, FALSE, &cfi);
-    cfi.dwFontSize.Y = fontSize; // Thay đổi kích thước phông chữ
-    SetCurrentConsoleFontEx(hConsole, FALSE, &cfi);
-}
+
 
 void centerText(const std::string& text) {
     // Lấy chiều rộng console
@@ -26,4 +19,11 @@ void centerText(const std::string& text) {
     std::string centeredText(padding, ' '); // Tạo chuỗi khoảng trắng
     centeredText += text; // Căn giữa
     std::cout << centeredText << std::endl; // In ra
+}
+void goToXY(int x, int y) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD position;
+    position.X = x; // Tọa độ x (cột)
+    position.Y = y; // Tọa độ y (hàng)
+    SetConsoleCursorPosition(hConsole, position);
 }

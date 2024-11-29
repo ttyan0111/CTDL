@@ -8,11 +8,12 @@
 #include <atomic>
 #include <conio.h>
 #include <windows.h> // Thêm thư viện này để sử dụng SetConsoleCursorPosition
-
 #include "LoginService.h"
 #include "Display.h"
-
 #include "OrderList.h"
+#include <string>
+#include "Font_Color.h"
+#include <fstream>
 
 
 class MenuManagerController {
@@ -44,6 +45,8 @@ public:
 
     // Kiểm tra thông tin đăng nhập
     bool checkLogin();
+    void hienThiDangNhap();
+
 };
 
 #endif // MANAGE_H

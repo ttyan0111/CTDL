@@ -6,7 +6,7 @@
 void LoginService::loadUsersFromFile(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) {
-        std::cerr << "Không thể mở tệp: " << filename << std::endl;
+        std::cerr << "Khong the mo tep: " << filename << std::endl;
         return;
     }
     std::string line;
@@ -30,11 +30,11 @@ LoginService::LoginService() {
 bool LoginService::authenticate(const std::string& username, const std::string& password) {
     auto it = userDatabase.find(username);
     if (it == userDatabase.end()) {
-        std::cout << "\nTên đăng nhập không tồn tại.\n";
+        std::cout << "\nTen dang nhap khong ton tai.\n";
         return false;
     }
     if (it->second != password) {
-        std::cout << "\nMật khẩu không chính xác.\n";
+        std::cout << "\nMat khau khong chinh xac.\n";
         return false;
     }
     return true;

@@ -7,7 +7,8 @@
 #include <iostream>
 #include "ManagerGoodsService.h"
 #include "MenuManagerController.h"
-
+#include <string>
+#include "Font_Color.h"
 class MenuMainController {
 private:
     Display displayMain;
@@ -25,6 +26,7 @@ public:
 
     // Hàm xử lý khi chọn một mục trong menu
     void handleSelection();
+
 };
 
 #endif // MENUMAINCONTROLLER_H

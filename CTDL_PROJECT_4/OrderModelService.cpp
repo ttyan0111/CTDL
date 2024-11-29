@@ -23,7 +23,7 @@ void OrderModelService::loadNextOrderNumberFromFile() {
     }
     else {
         nextOrderNumber = 1;  // Nếu không thể đọc từ file, bắt đầu từ 1
-        std::cout << "Không thể đọc được file nextNumber" << std::endl;
+        
     }
 }
 

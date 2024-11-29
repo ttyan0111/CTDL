@@ -40,36 +40,36 @@ std::ostream& operator<<(std::ostream& os, const GoodsModel& goods) {
 
 std::istream& operator>>(std::istream& is, GoodsModel& goods) {
     while (true) {
-        std::cout << "Mã(4 kí tự): ";
+        std::cout << "Ma(4 ki tu): ";
         is >> goods.productCode;
         if (goods.productCode.length() != 4) {
-            std::cout << "Mã hàng phải đúng 4 kí tự!\n";
+            std::cout << "Ma hang phai dung 4 ki tu!\n";
         }
         else {
             break;
         }
     }
     is.ignore();
-    std::cout << "Tên sản phẩm: ";
+    std::cout << "Ten san pham: ";
     std::getline(is, goods.productName);
-    std::cout << "Nơi sản xuất: ";
+    std::cout << "Noi san xuat: ";
     std::getline(is, goods.placeOfOrigin);
-    std::cout << "Màu sắc: ";
+    std::cout << "Mau sac: ";
     std::getline(is, goods.color);
 
     while (true) {
-        std::cout << "Giá: ";
+        std::cout << "Gia: ";
         if (is >> goods.price) {
             break;
         }
         else {
-            std::cout << "Giá phải là số hợp lệ!\n";
+            std::cout << "Gia phai la so hop le!\n";
             is.clear();
             is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
     }
     is >> goods.importDate;
-    std::cout << "Số lượng: ";
+    std::cout << "So luong: ";
     is >> goods.quantity;
 
     return is;
@@ -83,16 +83,16 @@ void GoodsModel::saveToFile(std::ofstream& outfile) const {
 
 void GoodsModel::input() {
     while (true) {
-        std::cout << "Mã(4 kí tự): ";
+        std::cout << "Ma(4 ki tu): ";
         std::cin >> productCode;
         if (productCode.length() != 4) {
-            std::cout << "Mã hàng phải đúng 4 kí tự!\n";
+            std::cout << "Ma hang phai dung 4 ki tu!\n";
         }
         else {
             break;
         }
     }
-    std::cout << "Số lượng: ";
+    std::cout << "So luong: ";
     std::cin >> quantity;
 }
 

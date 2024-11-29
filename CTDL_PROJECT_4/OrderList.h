@@ -2,12 +2,13 @@
 
 #include "OrderModel.h"
 #include "GoodsListModel.h"
-
+#include "Font_Color.h"
+#include <conio.h>
 class OrderList {
 private:
     std::vector<OrderModel> _orderList;
     GoodsListModel _goodList;
-
+    int i;
     void parseAndAddGoods(const std::string& orderInfo);
 
 public:

@@ -25,8 +25,8 @@ void MenuManagerController::start() {
     }
     else {
         system("cls");
-        std::cout << "Đăng nhập thất bại!\n";
-        std::cout << "Nhấn phím ESC để quay lại menu chính..." << std::endl;
+        std::cout << "Dang nhap that bai!\n";
+        std::cout << "Nhan phim ESC de quay lai menu chinh..." << std::endl;
         while (true) {
             char key = _getch(); // Chờ nhấn phím bất kỳ để quay lại menu chính
             if (key == 27) {
@@ -39,21 +39,19 @@ void MenuManagerController::start() {
 // Xử lý lựa chọn sau khi đăng nhập thành công
 bool MenuManagerController::handleSelection() {
     OrderList orderList;
-    system("cls");
     int selection = display.getSelectedManage();
     switch (selection) {
-    case 0:
-        std::cout << "Xử lý đơn hàng\n";
+    case 1:
         orderList.processOrder();
         break;
-    case 1:
-        std::cout << "Quản lý hàng hóa\n";
+    case 2:
+        std::cout << "Quan ly hang hoa\n";
        /* start();*/
         return false;
-    case 2:
+    case 3:
         return true;
     default:
-        std::cout << "Lựa chọn không hợp lệ!\n";
+        std::cout << "Lua chon khong hop le!\n";
         return false;
     }
 }
@@ -88,9 +86,9 @@ bool MenuManagerController::isCurrentlyLocked() {
             SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cursorPos);
 
             // In lại dòng thông báo
-            std::cout << "Chức năng đang bị khóa! Còn " << remainingTime << " giây... ";
+            std::cout << "Chuc nang dang bi khoa! Con " << remainingTime << " giay... ";
             // Dấu cách để xóa thông tin cũ
-            std::cout << "(Nhấn ESC để thoát)";
+            std::cout << "(Nhan ESC de thoat)";
             std::cout << "\r"; // Di chuyển con trỏ về đầu dòng
 
             // Kiểm tra phím nhấn
@@ -115,21 +113,21 @@ bool MenuManagerController::login() {
 
     while (attemptsLeft > 0) {
         if (checkLogin()) {
-            std::cout << "Đăng nhập thành công!\n";
+            std::cout << "Dang nhap thanh cong!\n";
             isLogin = true;
             return true;
         }
         else {
             attemptsLeft--;
-            std::cout << "Sai thông tin đăng nhập! Còn "
-                << attemptsLeft << " lần thử.\n";
+            std::cout << "Sai thong tin dang nhap! Con "
+                << attemptsLeft << " lan thu.\n";
 
             if (attemptsLeft == 0) {
                 lockCountdown(300); // Khóa 5 phút (300 giây)
                 return false;
             }
         }
-        std::cout << "Tiếp tục (Enter) hoặc Thoát (ESC): ";
+        std::cout << "Tiep tuc (Enter) hoac Thoat (ESC): ";
         // Chờ người dùng nhấn Enter hoặc ESC
         while (true) {
             char key = _getch();
@@ -149,10 +147,16 @@ bool MenuManagerController::login() {
 // Kiểm tra thông tin đăng nhập
 bool MenuManagerController::checkLogin() {
     std::string username, password;
-    system("cls");
-    std::cout << "Nhập tên đăng nhập: ";
+    Display::hienThiGiaoDienChinh();
+    
+    hienThiDangNhap();
+    
+    
+    goToXY(26, 16);
+    std::cout << "NHAP TEN DANG NHAP:";
     std::getline(std::cin, username);
-    std::cout << "Nhập mật khẩu: ";
+    goToXY(26, 18);
+    std::cout << "NHAP MAT KHAU: ";
     char ch;
     while ((ch = _getch()) != 13) { // 13 là mã ASCII của phím Enter
         if (ch == 8) { // 8 là mã ASCII của phím Backspace
@@ -168,3 +172,26 @@ bool MenuManagerController::checkLogin() {
     }
     return loginService.authenticate(username, password);
 }
+void MenuManagerController::hienThiDangNhap() {
+    std::string line;
+    int i = 1;
+    std::ifstream file("../dangNhap.txt");
+    setColor(0, 0);
+    while (getline(file, line)) { // Đọc từng dòng từ file
+        goToXY(26, 0 + i + 1);
+        for (char c : line) {
+            if (c == '*'  || c == '.' || c==',') {
+                setColor(11, 11);
+            }
+            else {
+                setColor(0, 0);
+            }
+            std::cout << c;
+        }
+        std::cout << std::endl;
+        i++;
+    }
+    setColor(7, 0); // Đặt lại màu mặc định khi kết thúc
+    file.close();
+}
+

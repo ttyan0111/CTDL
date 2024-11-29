@@ -23,29 +23,29 @@ bool MenuManagerGoodsController::handleSelection() {
     int selection = display.getSelectedManageGoods();
     switch (selection) {
     case 0:
-        std::cout << "Thêm hàng hóa\n";
+        std::cout << "Them hang hoa\n";
         std::cin >> goodsModel;
         goodsService.addGoods(goodsModel);
         waittingInput();
         return false;
     case 1:
         goodsService.showDataAsTable();
-        std::cout << "\nXóa hàng hóa\n";
+        std::cout << "\nXoa hang hoa\n";
         std::cout << "Nhap ma hang can xoa: ";
         std::cin >> code;
         goodsService.deleteGoods(code);
         waittingInput();
         return false;
     case 2:
-        std::cout << "Cập nhật số lượng hàng\n";
+        std::cout << "Cap nhat so luong hang\n";
         goodsService.updateQuantityGoods();
         waittingInput();
         return false;
     case 3:
-        std::cout << "Về màn hình chính\n";
+        std::cout << "Ve man hinh chinh\n";
         return true;
     default:
-        std::cout << "Lựa chọn không hợp lệ!\n";
+        std::cout << "Lua chon khong hop le!\n";
         waittingInput();
         return false;
     }

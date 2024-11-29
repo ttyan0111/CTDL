@@ -70,7 +70,7 @@ void DateTimeModel::display() const {
 
 bool DateTimeModel::checkDateFormat(const std::string date) {
     if (date.length() != 10 || date[2] != '/' || date[5] != '/') {
-        std::cerr << "Đã xảy ra lỗi: Định dạng không đúng. Vui lòng nhập theo định dạng dd/MM/yyyy." << std::endl;
+        std::cerr << "Da xay ra loi: Dinh dang khong dung. Vui long nhap theo đinh dang dd/MM/yyyy." << std::endl;
         return false;
     }
 
@@ -83,7 +83,7 @@ bool DateTimeModel::checkDateFormat(const std::string date) {
         d = std::stoi(token);
     }
     catch (const std::invalid_argument&) {
-        std::cerr << "Đã xảy ra lỗi: Định dạng không đúng." << std::endl;
+        std::cerr << "Da xay ra loi: Dinh dang khong dung." << std::endl;
         return false;
     }
 
@@ -92,7 +92,7 @@ bool DateTimeModel::checkDateFormat(const std::string date) {
         m = std::stoi(token);
     }
     catch (const std::invalid_argument&) {
-        std::cerr << "Đã xảy ra lỗi: Định dạng không đúng." << std::endl;
+        std::cerr << "Da xay ra loi: Dinh dang khong dung" << std::endl;
         return false;
     }
 
@@ -101,12 +101,12 @@ bool DateTimeModel::checkDateFormat(const std::string date) {
         y = std::stoi(token);
     }
     catch (const std::invalid_argument&) {
-        std::cerr << "Đã xảy ra lỗi: Định dạng không đúng." << std::endl;
+        std::cerr << "Da xay ra loi: Dinh dang khong dung" << std::endl;
         return false;
     }
 
     if (!isValidDate(d, m, y)) {
-        std::cerr << "Đã xảy ra lỗi: Ngày không hợp lệ." << std::endl;
+        std::cerr << "Da xay ra loi: Ngay khong hop le" << std::endl;
         return false;
     }
 
@@ -119,7 +119,7 @@ bool DateTimeModel::checkDateFormat(const std::string date) {
 
 std::istream& operator>>(std::istream& is, DateTimeModel& dt) {
     while (true) {
-        std::cout << "Ngày nhập(dd/MM/yyyy): ";
+        std::cout << "Ngay nhap(dd/MM/yyyy): ";
         is >> dt.date;
         if (dt.checkDateFormat(dt.date)) {
             return is;

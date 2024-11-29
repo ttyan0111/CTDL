@@ -27,7 +27,7 @@ const GoodsModel& Unordered_User::getFromName(const std::string& key) const {
     if (it != goodsList_Name.end()) {
         return it->second;
     }
-    throw std::runtime_error("Tên sản phẩm '" + key + "' không tồn tại.");
+    throw std::runtime_error("Ten san pham '" + key + "' khong ton tai.");
 }
 
 // Lấy sản phẩm theo mã
@@ -36,7 +36,7 @@ const GoodsModel& Unordered_User::getFromCode(const std::string& key) const {
     if (it != goodsList_Code.end()) {
         return it->second;
     }
-    throw std::runtime_error("Mã sản phẩm '" + key + "' không tồn tại.");
+    throw std::runtime_error("Ma san pham '" + key + "' khong ton tai.");
 }
 
 // Kiểm tra sản phẩm theo mã
@@ -55,10 +55,10 @@ void Unordered_User::removeFromCode(const std::string& key) {
         goodsList_Code.erase(key);
         goodsList_Name.erase(productName);
 
-        std::cout << "Đã xóa sản phẩm với mã: " << key << std::endl;
+        std::cout << "Da xoa san pham voi ma: " << key << std::endl;
     }
     else {
-        std::cerr << "Không tìm thấy sản phẩm với mã: " << key << std::endl;
+        std::cerr << "Khong tim thay san pham voi ma: " << key << std::endl;
     }
 }
 

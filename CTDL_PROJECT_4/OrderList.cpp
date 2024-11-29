@@ -10,7 +10,7 @@
  ***********************************************/
 void OrderList::parseAndAddGoods(const std::string& orderInfo) {
     std::string str[6];
-
+    int i = 1;
     int pos1 = 0;
     int pos2;
     for (int i = 0; i < 5; ++i) {
@@ -66,7 +66,7 @@ void OrderList::readFile() {
         _orderList.clear();
     }
 
-    std::ifstream reader("Resource Files\\DonHang.txt");
+    std::ifstream reader("DonHang.txt");
     if (!reader) {
         std::cerr << "Khong the mo tep" << std::endl;
     }
@@ -78,7 +78,7 @@ void OrderList::readFile() {
         }
     }
     catch (const std::exception& e) {
-        std::cerr << "Lỗi khi đọc tệp: " << e.what() << std::endl;
+        std::cerr << "Loi khi doc tep: " << e.what() << std::endl;
     }
     reader.close();
 }
@@ -87,7 +87,7 @@ void OrderList::readFile() {
  * @Description ghi du tu orderList vao file DonHang.txt
  ***********************************************/
 void OrderList::writeFile() {
-    std::ofstream writer("Resource Files\\DonHang.txt");
+    std::ofstream writer("DonHang.txt");
     if (writer.is_open()) {
         int stt = 0;
         for (OrderModel order : _orderList) {
@@ -113,7 +113,7 @@ void OrderList::writeFile() {
         writer.close();
     }
     else {
-        std::cout << "\nkhong the mo file.\n";
+        std::cout << "\nKhong the mo file.\n";
     }
 }
 
@@ -121,9 +121,12 @@ void OrderList::writeFile() {
  * @Description hien thi tat ca don hang.
  ***********************************************/
 void OrderList::displayAll() {
+    
     for (OrderModel order : _orderList) {
+        goToXY(28, 3 + i);
         order.display();
         std::cout << "\n";
+        i+=2;
     }
 }
 
@@ -152,43 +155,67 @@ void OrderList::processOrder() {
     displayAll();
 
     if (_orderList.empty()) {
-        std::cout << "\nkhong co don hang nao can xu ly.\n";
-        system("pause");
-        return;
+        goToXY(28, 5);
+        std::cout << "\nKhong co don hang nao can xu ly.\n";
+        
+       
     }
-
-    std::cout << "\nnhap ma can xu ly: ";
+    goToXY(28, i+2);
+    i += 2;
+    std::cout << "Nhap ma can xu ly: ";
     int code;
     while (std::cin >> code) {
         char exitOrContinue = 'y';
         if (code == _orderList[0].getOrderNumber()) {
             if (!checkGoodsNum(_orderList[0].getListGoods()))
-                std::cout << "xu ly don hang that bai vi so luong hang hoa khong du.\n";
+            {
+                goToXY(28, i + 2);
+                std::cout << "Xu ly don hang that bai vi so luong hang hoa khong du.\n";
+                i+=2;
+            }
             else {
                 updateNumberFromCodeGoods(_orderList[0].getListGoods());
-                std::cout << "don hang da xu ly.\n";
+                goToXY(28, i + 2);
+                i += 2;
+                std::cout << "Don hang da xu ly.\n";
+                _goodList.showDataAsTable();
             }
 
             _orderList.erase(_orderList.begin());
         }
         else {
-            std::cout << "nhap ma sai hoac khong phai la ma don hang dau tien.\n";
+            goToXY(28, i + 2);
+            i += 2;
+            std::cout << "Nhap ma sai hoac khong phai la ma don hang dau tien.\n";
         }
 
         if (_orderList.empty()) {
-            std::cout << "khong con don hang de xu ly.\n";
-            system("pause");
+            goToXY(28, i + 2);
+            i += 2;
+            std::cout << "Khong con don hang de xu ly.\n";
+            goToXY(28, i + 2);
+            i += 2;
+            std::cout << "Nhap (ESC) de thoat.\n";
+            char key = _getch();
+            
+            if (key == 27) {
+                break;
+            }
+        }
+        goToXY(28, i + 2);
+        i += 2;
+        std::cout << "Nhap (ENTER) de tiep tuc xu ly nhap (ESC) de thoat.\n";
+        char key = _getch();
+        if (key == 13) {
+            continue;
+        }
+        else if (key == 27) {
             break;
         }
-
-        std::cout << "nhap y de tiep tuc xu ly nhap 1 ki tu bat ki de thoat.\n";
-        std::cin >> exitOrContinue;
-        if (exitOrContinue != 'y') break;
     }
 
-    _goodList.showDataAsTable();
-    system("pause");
+    
 
-    _goodList.writeToFile("Resource Files\\HangHoa.txt");
+    _goodList.writeToFile("HangHoa.txt");
     writeFile();
 }

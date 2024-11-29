@@ -88,7 +88,7 @@ void GoodsListModel::readFile() {
         user.removeAll();
     }
 
-    std::ifstream reader("Resource Files\\HangHoa.txt");
+    std::ifstream reader("HangHoa.txt");
     if (!reader) {
         std::cerr << "Khong the mo tep" << std::endl;
         return;
@@ -101,7 +101,7 @@ void GoodsListModel::readFile() {
         }
     }
     catch (const std::exception& e) {
-        std::cerr << "Lỗi khi đọc tệp: " << e.what() << std::endl;
+        std::cerr << "Loi khi doc tep: " << e.what() << std::endl;
     }
     reader.close();
 }
@@ -126,7 +126,7 @@ void GoodsListModel::writeToFile(const std::string& filename) const {
 
     std::vector<GoodsModel> goodsList = user.getGoodsList();
     if (goodsList.empty()) {
-        std::cerr << "Danh sach hang hoa trong, khong co gi để ghi vao file." << std::endl;
+        std::cerr << "Danh sach hang hoa trong" << std::endl;
         return;
     }
 
