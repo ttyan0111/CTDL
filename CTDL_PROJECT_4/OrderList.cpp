@@ -155,9 +155,16 @@ void OrderList::processOrder() {
     displayAll();
 
     if (_orderList.empty()) {
-        goToXY(28, 5);
-        std::cout << "\nKhong co don hang nao can xu ly.\n";
+        std :: cout << std::endl;
+        goToXY(28, 2);
+        std::cout << "Khong co don hang nao can xu ly.\n";
+        goToXY(28, 4);
+        std::cout << "Nhap (ESC) de thoat.\n";
+        char key = _getch();
         
+        if (key == 27) {
+            return;
+        }
        
     }
     goToXY(28, i+2);
@@ -185,7 +192,7 @@ void OrderList::processOrder() {
         }
         else {
             goToXY(28, i + 2);
-            i += 2;
+            i += 2; 
             std::cout << "Nhap ma sai hoac khong phai la ma don hang dau tien.\n";
         }
 
