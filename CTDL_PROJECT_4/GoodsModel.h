@@ -5,6 +5,9 @@
 #include <iostream>
 #include <fstream>
 #include "DateTimeModel.h"
+#include "Font_Color.h"
+#include <limits>
+#include "Display.h"
 
 class GoodsModel {
 private:
@@ -15,8 +18,10 @@ private:
     double price{};
     DateTimeModel importDate;
     int quantity{};
-
+    int i;
+    
 public:
+    Display display;
     // Constructor
     GoodsModel();
     GoodsModel(std::string product_code, std::string product_name, std::string place_of_origin, std::string color,
@@ -49,7 +54,7 @@ public:
     void setProductName(std::string product_name);
     void setPrice(double price);
     void setPlaceOfOrigin(std::string place_of_origin);
-    void setColor(std::string color);
+    void setCL(std::string color);
     void setImportDate(DateTimeModel import_date);
 };
 

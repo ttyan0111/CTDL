@@ -56,6 +56,7 @@ public:
     int getSelectedManageGoods() const;
     static void hienThiGiaoDienChinh();
     static void  backGround();
+    void deleteBackGround();
 };
 
 #endif // DISPLAYMAIN_H

@@ -21,7 +21,7 @@ void Display::display(std::vector<std::string> option, int& selected, std::strin
     
     while (true) {
        
-        goToXY(7, 8); // Vị trí tiêu đề
+        goToXY(6, 8); // Vị trí tiêu đề
         setColor(14, 0); // Màu vàng cho tiêu đề
         std::cout << title << std::endl;
 
@@ -65,6 +65,7 @@ void Display::displayManager() {
     hienThiGiaoDienChinh();
     display(optionsManage, selectedManage, "MENU QUAN LY");
 }
+
 
 // Hàm hiển thị menu quản lý hàng hóa
 void Display::displayManagerGoods() {
@@ -127,4 +128,10 @@ void Display::backGround() {
         i++;
     }
     setColor(7, 0); // Đặt lại màu mặc định khi kết thúc
+}
+void Display::deleteBackGround() {
+    for (int i = 1; i <= 25; i++) {
+        goToXY(26, i);
+        std::cout << std::string(102, ' ');
+    }
 }

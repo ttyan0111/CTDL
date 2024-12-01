@@ -4,7 +4,8 @@
 #include "GoodsListModel.h"
 #include <string>
 #include <iostream>
-
+#include "Font_Color.h"
+#include <conio.h>
 class ManageGoodsService {
 private:
     GoodsListModel goodsListModel;
@@ -33,6 +34,8 @@ public:
 
     // Tìm kiếm hàng hóa theo tên
     void find();
+    bool boolFindByCode(std::string code);
+    double getPriceByCode(std::string code);
 };
 
 #endif // GOODSLISTSERVICE_H

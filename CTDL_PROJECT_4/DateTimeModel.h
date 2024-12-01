@@ -8,6 +8,8 @@
 #include <sstream>
 #include <ctime>
 #include <fstream>
+#include "Font_Color.h"
+#include <conio.h>
 class DateTimeModel {
 private:
     int day = 1, month = 1, year = 1900; // Giá trị mặc định

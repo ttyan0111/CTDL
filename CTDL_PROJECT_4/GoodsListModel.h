@@ -9,6 +9,7 @@
 #include "Unordered_User.h"
 #include "DateTimeModel.h"
 #include "GoodsModel.h"
+#include "Font_Color.h"
 class GoodsListModel {
 private:
     Unordered_User user;
@@ -38,12 +39,14 @@ public:
 
     // Tìm kiếm hàng hóa
     void findGoods(const std::string name);
+    bool boolFindByCode(std::string code);
 
     // Cập nhật số lượng 1 mặt hàng
     void updateOneGoods(const std::string code, const int& num);
 
     // Lấy số lượng của 1 mặt hàng
     int getOneGoods(const std::string& code);
+    GoodsModel getGoodsModelFromByCode(std::string code);
 };
 
 #endif // GOODSLISTMODEL_H

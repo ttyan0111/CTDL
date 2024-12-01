@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include <iostream>
 #include "OrderModel.h"
-
+#include "Display.h"
 class OrderModelService {
 private:
     OrderModel orderModel;
     int nextOrderNumber;
-
+    Display display;
 public:
     // Constructor
     OrderModelService();

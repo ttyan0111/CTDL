@@ -17,42 +17,82 @@ bool GoodsListModel::insertGoods(const GoodsModel& goodsModel) {
 
 // Hiển thị dữ liệu dưới dạng bảng
 void GoodsListModel::showDataAsTable() {
-    std::cout << std::left << std::setw(9) << "Ma Hang"
-        << std::setw(10) << "Ten Hang"
-        << std::setw(14) << "Noi San Xuat"
-        << std::setw(9) << "Mau Sac"
-        << std::setw(10) << "Gia Ban"
-        << std::setw(16) << "Ngay Nhap Khoa"
-        << std::setw(10) << "So Luong" << "\n";
-
+    goToXY(28, 3);
+    setColor(6, 0);
+    std::cout << "Ma Hang";
+    goToXY(40, 3);
+    std::cout << "Ten Hang";
+    goToXY(60, 3);
+    std::cout << "Noi San Xuat";
+    goToXY(79, 3);
+    std::cout << "Mau Sac";
+    goToXY(89, 3);
+    std::cout << "Gia Ban";
+    goToXY(100, 3);
+    std::cout << "Ngay Nhap";
+    goToXY(115, 3);
+    std::cout << "So Luong" << "\n";
+    setColor(7, 0);
+    int u = 5;
     std::vector<GoodsModel> goodslist = user.getGoodsList();
     for (auto goods : goodslist) {
-        std::cout << std::left << std::setw(9) << goods.getProductCode()
-            << std::setw(10) << goods.getProductName()
-            << std::setw(14) << goods.getPlaceOfOrigin()
-            << std::setw(9) << goods.getColor()
-            << std::setw(10) << goods.getPrice()
-            << std::setw(16) << goods.getImportDate()
-            << std::setw(10) << goods.getQuantity() << std::endl;
+
+        goToXY(28, u);
+        std::cout  << goods.getProductCode();
+        goToXY(40, u);
+        std::cout << goods.getProductName();
+        goToXY(60, u);
+        std::cout << goods.getPlaceOfOrigin();
+        goToXY(79, u);
+        std::cout << goods.getColor();
+        goToXY(89, u);
+        std::cout << goods.getPrice();
+        goToXY(100, u);
+        std::cout << goods.getImportDate();
+        goToXY(115, u);
+        std::cout << goods.getQuantity() << std::endl;
+        u += 2;
+
     }
+
 }
 
 void GoodsListModel::showDataAsTable(std::vector<GoodsModel>& goodslist) {
-    std::cout << std::left << std::setw(9) << "Ma Hang"
-        << std::setw(10) << "Ten Hang"
-        << std::setw(14) << "Noi San Xuat"
-        << std::setw(9) << "Mau Sac"
-        << std::setw(10) << "Gia Ban"
-        << std::setw(16) << "Ngay Nhap Khoa"
-        << std::setw(10) << "So Luong" << "\n";
+    goToXY(28, 3);
+    setColor(6, 0);
+    std::cout << "Ma Hang";
+    goToXY(40, 3);
+    std::cout << "Ten Hang";
+    goToXY(60, 3);
+    std::cout << "Noi San Xuat";
+    goToXY(79, 3);
+    std::cout << "Mau Sac";
+    goToXY(89, 3);
+    std::cout << "Gia Ban";
+    goToXY(100, 3);
+    std::cout << "Ngay Nhap";
+    goToXY(115, 3);
+    std::cout << "So Luong" << "\n";
+    setColor(7, 0);
+    int u = 5;
     for (auto goods : goodslist) {
-        std::cout << std::left << std::setw(9) << goods.getProductCode()
-            << std::setw(10) << goods.getProductName()
-            << std::setw(14) << goods.getPlaceOfOrigin()
-            << std::setw(9) << goods.getColor()
-            << std::setw(10) << goods.getPrice()
-            << std::setw(16) << goods.getImportDate()
-            << std::setw(10) << goods.getQuantity() << std::endl;
+
+        goToXY(28, u);
+        std::cout << goods.getProductCode();
+        goToXY(40, u);
+        std::cout << goods.getProductName();
+        goToXY(60, u);
+        std::cout << goods.getPlaceOfOrigin();
+        goToXY(79, u);
+        std::cout << goods.getColor();
+        goToXY(89, u);
+        std::cout << goods.getPrice();
+        goToXY(100, u);
+        std::cout << goods.getImportDate();
+        goToXY(115, u);
+        std::cout << goods.getQuantity() << std::endl;
+        u += 2;
+
     }
 }
 
@@ -126,7 +166,7 @@ void GoodsListModel::writeToFile(const std::string& filename) const {
 
     std::vector<GoodsModel> goodsList = user.getGoodsList();
     if (goodsList.empty()) {
-        std::cerr << "Danh sach hang hoa trong" << std::endl;
+       /* std::cerr << "Danh sach hang hoa trong" << std::endl;*/
         return;
     }
 
@@ -150,7 +190,14 @@ void GoodsListModel::findGoods(const std::string name) {
             tmp.push_back(x);
         }
     }
+    goToXY(28, 2);
+    std::cout << std::string(90, ' ');
+    goToXY(28, 4);
+    std::cout << std::string(90, ' ');
     showDataAsTable(tmp);
+}
+bool GoodsListModel ::boolFindByCode(std::string code) {
+    return user.findFromCode(code);
 }
 
 // Cập nhật số lượng 1 mặt hàng
@@ -162,4 +209,7 @@ void GoodsListModel::updateOneGoods(const std::string code, const int& num) {
 // Lấy số lượng của 1 mặt hàng
 int GoodsListModel::getOneGoods(const std::string& code) {
     return user.getNumFromCode(code);
+}
+GoodsModel GoodsListModel::getGoodsModelFromByCode(std::string code) {
+    return user.getFromCode(code);
 }

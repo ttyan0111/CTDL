@@ -24,9 +24,8 @@ void MenuManagerController::start() {
         }
     }
     else {
-        system("cls");
-        std::cout << "Dang nhap that bai!\n";
-        std::cout << "Nhan phim ESC de quay lai menu chinh..." << std::endl;
+        goToXY(28, 24);
+        std::cout << "Dang nhap that bai!. Nhan phim ESC de quay lai menu chinh...\n";
         while (true) {
             char key = _getch(); // Chờ nhấn phím bất kỳ để quay lại menu chính
             if (key == 27) {
@@ -45,13 +44,11 @@ bool MenuManagerController::handleSelection() {
         orderList.processOrder();
         break;
     case 2:
-        std::cout << "Quan ly hang hoa\n";
-       /* start();*/
+        managerGoods.start();
         return false;
     case 3:
         return true;
     default:
-        std::cout << "Lua chon khong hop le!\n";
         return false;
     }
 }
@@ -80,17 +77,19 @@ bool MenuManagerController::isCurrentlyLocked() {
         COORD cursorPos;
         cursorPos.Y = 0; // Vị trí Y của dòng hiển thị
         cursorPos.X = 0; // Vị trí X bắt đầu
-
+        display.deleteBackGround();
         while (key != 27) {
             // Di chuyển con trỏ về vị trí mong muốn
             SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cursorPos);
-
+            goToXY(28, 3);
             // In lại dòng thông báo
+            setColor(12, 0);
             std::cout << "Chuc nang dang bi khoa! Con " << remainingTime << " giay... ";
             // Dấu cách để xóa thông tin cũ
+            goToXY(28, 5);
             std::cout << "(Nhan ESC de thoat)";
             std::cout << "\r"; // Di chuyển con trỏ về đầu dòng
-
+            setColor(7, 0);
             // Kiểm tra phím nhấn
             if (_kbhit()) {
                 key = _getch();
@@ -119,6 +118,8 @@ bool MenuManagerController::login() {
         }
         else {
             attemptsLeft--;
+            goToXY(28, 22);
+            setColor(12, 0); 
             std::cout << "Sai thong tin dang nhap! Con "
                 << attemptsLeft << " lan thu.\n";
 
@@ -126,7 +127,9 @@ bool MenuManagerController::login() {
                 lockCountdown(300); // Khóa 5 phút (300 giây)
                 return false;
             }
+            setColor(7, 0);
         }
+        goToXY(28, 24);
         std::cout << "Tiep tuc (Enter) hoac Thoat (ESC): ";
         // Chờ người dùng nhấn Enter hoặc ESC
         while (true) {
@@ -152,10 +155,10 @@ bool MenuManagerController::checkLogin() {
     hienThiDangNhap();
     
     
-    goToXY(26, 16);
+    goToXY(28, 16);
     std::cout << "NHAP TEN DANG NHAP:";
     std::getline(std::cin, username);
-    goToXY(26, 18);
+    goToXY(28, 18);
     std::cout << "NHAP MAT KHAU: ";
     char ch;
     while ((ch = _getch()) != 13) { // 13 là mã ASCII của phím Enter

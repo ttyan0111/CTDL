@@ -8,7 +8,8 @@
 #include <fstream>
 #include "GoodsModel.h"
 #include "DateTimeModel.h"
-
+#include <conio.h>
+#include "ManagerGoodsService.h"
 class OrderModel {
 private:
     int orderNumber;  // Số thứ tự đơn hàng
@@ -18,7 +19,7 @@ private:
     std::string customerAddress;  // Địa chỉ khách hàng
     std::string customerPhone;  // Số điện thoại khách hàng
     DateTimeModel orderDate;  // Ngày đặt hàng
-
+    ManageGoodsService manageGoodsService;
 public:
     // Constructors
     OrderModel();

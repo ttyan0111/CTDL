@@ -11,28 +11,39 @@ void MenuMainController::start() {
 
 // Hàm xử lý khi chọn một mục trong menu
 void MenuMainController::handleSelection() {
-    system("cls");
+    
     int selection = displayMain.getSelectedIndex();
+    char key;
     switch (selection) {
     case 1:
-        std::cout << "Hien thi thong tin hang hoa" << std::endl;
+        displayMain.deleteBackGround();
         // Thêm chức năng hiển thị thông tin hàng hóa ở đây
         goodsService.showDataAsTable();
-        system("pause");
+        key = _getch();
         break;
     case 2:
+        displayMain.deleteBackGround();
+        goToXY(28, 2);
         std::cout << "Tim kiem thong tin hang hoa" << std::endl;
         goodsService.find();
-        system("pause");
+        key = _getch();
         break;
     case 3:
-        std::cout << "Dat hang" << std::endl;
-        orderModelService.saveOrderGoodsToFile();
-        system("pause");
+        while (true) {
+            orderModelService.saveOrderGoodsToFile();
+            displayMain.deleteBackGround();
+            goToXY(28, 3);
+            std::cout << "Them don hang thanh cong, (Enter) de tiep tuc (ESC) de thoat" << std::endl;
+            key = _getch();
+            if (key == 13) {
+                continue;
+            }
+            else break;
+        }
         // Thêm chức năng đặt hàng ở đây
         break;
     case 4: {
-        std::cout << "Quan ly" << std::endl;
+
         managerController.start();
         break;
     }

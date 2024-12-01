@@ -30,11 +30,17 @@ LoginService::LoginService() {
 bool LoginService::authenticate(const std::string& username, const std::string& password) {
     auto it = userDatabase.find(username);
     if (it == userDatabase.end()) {
-        std::cout << "\nTen dang nhap khong ton tai.\n";
+        goToXY(28, 20);
+        setColor(12, 0);
+        std::cout << "Ten dang nhap khong ton tai.\n";
+        setColor(7, 0);
         return false;
     }
     if (it->second != password) {
-        std::cout << "\nMat khau khong chinh xac.\n";
+        goToXY(28, 20);
+        setColor(12, 0);
+        std::cout << "Mat khau khong chinh xac.\n";
+        setColor(7, 0);
         return false;
     }
     return true;

@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include "Font_Color.h"
+#include "MenuManagerGoodsController.h"
 using namespace std;
 
 int main() {
@@ -37,7 +38,8 @@ int main() {
 
     MenuMainController display;
     display.start();
-
+   /* MenuManagerGoodsController x;
+    x.start();*/
     
 
     

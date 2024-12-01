@@ -70,7 +70,7 @@ void DateTimeModel::display() const {
 
 bool DateTimeModel::checkDateFormat(const std::string date) {
     if (date.length() != 10 || date[2] != '/' || date[5] != '/') {
-        std::cerr << "Da xay ra loi: Dinh dang khong dung. Vui long nhap theo đinh dang dd/MM/yyyy." << std::endl;
+       
         return false;
     }
 
@@ -83,7 +83,7 @@ bool DateTimeModel::checkDateFormat(const std::string date) {
         d = std::stoi(token);
     }
     catch (const std::invalid_argument&) {
-        std::cerr << "Da xay ra loi: Dinh dang khong dung." << std::endl;
+        //std::cerr << "Da xay ra loi: Dinh dang khong dung." << std::endl;
         return false;
     }
 
@@ -92,7 +92,7 @@ bool DateTimeModel::checkDateFormat(const std::string date) {
         m = std::stoi(token);
     }
     catch (const std::invalid_argument&) {
-        std::cerr << "Da xay ra loi: Dinh dang khong dung" << std::endl;
+        //std::cerr << "Da xay ra loi: Dinh dang khong dung" << std::endl;
         return false;
     }
 
@@ -101,12 +101,12 @@ bool DateTimeModel::checkDateFormat(const std::string date) {
         y = std::stoi(token);
     }
     catch (const std::invalid_argument&) {
-        std::cerr << "Da xay ra loi: Dinh dang khong dung" << std::endl;
+        /*std::cerr << "Da xay ra loi: Dinh dang khong dung" << std::endl;*/
         return false;
     }
 
     if (!isValidDate(d, m, y)) {
-        std::cerr << "Da xay ra loi: Ngay khong hop le" << std::endl;
+       /* std::cerr << "Da xay ra loi: Ngay khong hop le" << std::endl;*/
         return false;
     }
 
@@ -119,12 +119,39 @@ bool DateTimeModel::checkDateFormat(const std::string date) {
 
 std::istream& operator>>(std::istream& is, DateTimeModel& dt) {
     while (true) {
+        goToXY(28, 13);
         std::cout << "Ngay nhap(dd/MM/yyyy): ";
         is >> dt.date;
+
         if (dt.checkDateFormat(dt.date)) {
             return is;
+
         }
+        else {
+            goToXY(28, 15);
+            setColor(12, 0);
+            std::cout << "Da xay ra loi: Dinh dang khong dung. Vui long nhap theo dinh dang dd/MM/yyyy." << std::endl;
+            setColor(7, 0);
+            goToXY(28, 17);
+            std::cout << "(Enter) de nhap lai, (ESC) de thoat\n";
+
+            char key = _getch();
+            if (key == 27) {
+                return is;
+            }
+            if (key == 13) {
+                goToXY(28, 13);
+                std::cout << std::string(50, ' ');
+                goToXY(28, 15);
+                std::cout << std::string(100, ' ');
+                goToXY(28, 17);
+                std::cout << std::string(50, ' ');
+                continue;
+            }
+        }
+       
     }
+    return is;
 }
 
 std::ostream& operator<<(std::ostream& os, const DateTimeModel& dt) {

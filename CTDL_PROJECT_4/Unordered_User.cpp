@@ -27,7 +27,7 @@ const GoodsModel& Unordered_User::getFromName(const std::string& key) const {
     if (it != goodsList_Name.end()) {
         return it->second;
     }
-    throw std::runtime_error("Ten san pham '" + key + "' khong ton tai.");
+    /*throw std::runtime_error("Ten san pham '" + key + "' khong ton tai.");*/
 }
 
 // Lấy sản phẩm theo mã
@@ -36,7 +36,7 @@ const GoodsModel& Unordered_User::getFromCode(const std::string& key) const {
     if (it != goodsList_Code.end()) {
         return it->second;
     }
-    throw std::runtime_error("Ma san pham '" + key + "' khong ton tai.");
+ /*   throw std::runtime_error("Ma san pham '" + key + "' khong ton tai.");*/
 }
 
 // Kiểm tra sản phẩm theo mã
@@ -54,10 +54,11 @@ void Unordered_User::removeFromCode(const std::string& key) {
         // Xóa khỏi goodsList_Code và goodsList_Name
         goodsList_Code.erase(key);
         goodsList_Name.erase(productName);
-
+        goToXY(28, 22);
         std::cout << "Da xoa san pham voi ma: " << key << std::endl;
     }
     else {
+        goToXY(28, 22);
         std::cerr << "Khong tim thay san pham voi ma: " << key << std::endl;
     }
 }
@@ -86,12 +87,15 @@ bool Unordered_User::updateQuantityByCode(const std::string& key, int newQuantit
         // Đồng bộ cập nhật trong goodsList_Name
         std::string productName = it->second.getProductName();
         goodsList_Name[productName] = it->second;
-
+        goToXY(28, 24);
         std::cout << "Da cap nhat so luong cho ma: " << key << " thanh " << newQuantity << std::endl;
         return true;
     }
     else {
+        goToXY(28, 24);
+        setColor(12, 0);
         std::cerr << "Khong tim thay san pham voi ma: " << key << std::endl;
+        setColor(7, 0);
         return false;
     }
 }

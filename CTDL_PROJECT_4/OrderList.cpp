@@ -121,7 +121,7 @@ void OrderList::writeFile() {
  * @Description hien thi tat ca don hang.
  ***********************************************/
 void OrderList::displayAll() {
-    
+    i = 1;
     for (OrderModel order : _orderList) {
         goToXY(28, 3 + i);
         order.display();
@@ -152,7 +152,7 @@ void OrderList::updateNumberFromCodeGoods(const std::vector<std::pair<std::strin
  ***********************************************/
 void OrderList::processOrder() {
     readFile();
-    displayAll();
+
 
     if (_orderList.empty()) {
         std :: cout << std::endl;
@@ -167,12 +167,16 @@ void OrderList::processOrder() {
         }
        
     }
-    goToXY(28, i+2);
-    i += 2;
-    std::cout << "Nhap ma can xu ly: ";
+    
+
+    
     int code;
-    while (std::cin >> code) {
-        char exitOrContinue = 'y';
+    while (true) {
+        displayAll();
+        goToXY(28, i + 3);
+        std::cout << "Nhap don can xu ly: ";
+        i += 3;
+        std::cin >> code;
         if (code == _orderList[0].getOrderNumber()) {
             if (!checkGoodsNum(_orderList[0].getListGoods()))
             {
@@ -204,8 +208,9 @@ void OrderList::processOrder() {
             i += 2;
             std::cout << "Nhap (ESC) de thoat.\n";
             char key = _getch();
-            
             if (key == 27) {
+                _goodList.writeToFile("HangHoa.txt");
+                writeFile();
                 break;
             }
         }
@@ -214,15 +219,22 @@ void OrderList::processOrder() {
         std::cout << "Nhap (ENTER) de tiep tuc xu ly nhap (ESC) de thoat.\n";
         char key = _getch();
         if (key == 13) {
+            
+
+            display.deleteBackGround();
+            _goodList.writeToFile("HangHoa.txt");
+            writeFile();
+           
             continue;
         }
         else if (key == 27) {
+            _goodList.writeToFile("HangHoa.txt");
+            writeFile();
             break;
         }
     }
 
     
 
-    _goodList.writeToFile("HangHoa.txt");
-    writeFile();
+   
 }

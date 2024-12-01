@@ -14,7 +14,7 @@ private:
     Display display;
     ManageGoodsService goodsService;
     GoodsModel goodsModel;
-
+    
 public:
     // Bắt đầu quản lý
     void start();

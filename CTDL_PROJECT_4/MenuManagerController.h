@@ -14,7 +14,7 @@
 #include <string>
 #include "Font_Color.h"
 #include <fstream>
-
+#include "MenuManagerGoodsController.h"
 
 class MenuManagerController {
 private:
@@ -23,7 +23,7 @@ private:
     std::atomic<bool> isLocked; // Trạng thái khóa (atomic cho thread-safe)
     std::atomic<int> remainingTime; // Thời gian khóa còn lại (giây)
     bool isLogin = false;
-
+    MenuManagerGoodsController managerGoods;
 
 public:
     MenuManagerController();
