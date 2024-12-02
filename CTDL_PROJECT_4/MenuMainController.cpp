@@ -30,15 +30,37 @@ void MenuMainController::handleSelection() {
         break;
     case 3:
         while (true) {
-            orderModelService.saveOrderGoodsToFile();
-            displayMain.deleteBackGround();
-            goToXY(28, 3);
-            std::cout << "Them don hang thanh cong, (Enter) de tiep tuc (ESC) de thoat" << std::endl;
+            if (orderModelService.saveOrderGoodsToFile()) {
+                displayMain.deleteBackGround();
+                goToXY(28, 3);
+                std::cout << "Don hang dang cho xu ly, (Enter) de tiep tuc (ESC) de thoat" << std::endl;
+                key = _getch();
+                if (key == 13) {
+                    continue;
+                }
+                else break;
+            }
+            else {
+                displayMain.deleteBackGround();
+                goToXY(28, 3);
+                std::cout << "Dat hang that bai, (Enter) de tiep tuc (ESC) de thoat" << std::endl;
+                key = _getch();
+                if (key == 13) {
+                    continue;
+                }
+                else break;
+            }
+            
+
+
+           
+
+           /* std::cout << ",(Enter) de tiep tuc (ESC) de thoat" << std::endl;
             key = _getch();
             if (key == 13) {
                 continue;
             }
-            else break;
+            else break;*/
         }
         // Thêm chức năng đặt hàng ở đây
         break;

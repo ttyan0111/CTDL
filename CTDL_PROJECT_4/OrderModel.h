@@ -10,6 +10,8 @@
 #include "DateTimeModel.h"
 #include <conio.h>
 #include "ManagerGoodsService.h"
+#include "Font_Color.h"
+
 class OrderModel {
 private:
     int orderNumber;  // Số thứ tự đơn hàng
@@ -20,6 +22,7 @@ private:
     std::string customerPhone;  // Số điện thoại khách hàng
     DateTimeModel orderDate;  // Ngày đặt hàng
     ManageGoodsService manageGoodsService;
+
 public:
     // Constructors
     OrderModel();
@@ -40,7 +43,7 @@ public:
     void display() const;
 
     // check không nhập thông tin.
-    void checkInforEmpty(std::string &sourceString);
+    bool inforEmpty(std::string &sourceString);
 
     // Nhập thông tin khách hàng
     void inputCustomerInfo(std::istream& in);
@@ -55,7 +58,9 @@ public:
     bool isOrderEligible();
 
     // Lưu đơn hàng vào file
-    void saveOrderToFile(const std::string& filename, int orderNumber);
+    bool saveOrderToFile(const std::string& filename, int orderNumber);
+
+
 };
 
 #endif // ORDER_H

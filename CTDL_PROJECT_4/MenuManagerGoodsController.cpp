@@ -22,10 +22,18 @@ bool MenuManagerGoodsController::handleSelection() {
     switch (selection) {
     case 1:
         std::cin >> goodsModel;
-        goodsService.addGoods(goodsModel);
-        std:: cout << std::endl;
-        goToXY(28, 19);
-        std::cout << "Them thanh cong!";
+        if (goodsService.addGoods(goodsModel)) {
+            std::cout << std::endl;
+            goToXY(28, 19);
+            std::cout << "Them thanh cong!";
+            
+        }
+        else {
+            goToXY(28, 17);
+            setColor(12, 0);
+            std::cout << "Ma hang ton tai" << std::endl;
+            setColor(7, 0);
+        }
         waittingInput();
         return false;
     case 2:

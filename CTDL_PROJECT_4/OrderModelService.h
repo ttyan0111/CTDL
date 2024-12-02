@@ -12,7 +12,7 @@ public:
     OrderModelService();
 
     // Phương thức lưu đơn hàng vào file
-    void saveOrderGoodsToFile();
+    bool saveOrderGoodsToFile();
 
     // Phương thức đọc giá trị `nextOrderNumber` từ file
     void loadNextOrderNumberFromFile();

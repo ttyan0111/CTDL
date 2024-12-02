@@ -18,7 +18,7 @@ public:
     void writeToFile() const;
 
     // Thêm hàng hóa
-    void addGoods(GoodsModel& goodsModel);
+    bool addGoods(GoodsModel& goodsModel);
 
     // Xóa hàng hóa
     void deleteGoods(std::string& code);

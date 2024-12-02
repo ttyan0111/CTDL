@@ -42,34 +42,72 @@ void OrderModel::display() const {
 }
 
 // check không nhập thông tin.
-void OrderModel::checkInforEmpty(std::string &sourceString)
+bool OrderModel::inforEmpty(std::string& sourceString)
 {
-    while (sourceString == "")
-    {
-        std::cout << "Thong tin khong the de trong moi nhap lai: ";
-        std::getline(std::cin, sourceString);
+    if (sourceString == "") {
+        setColor(12, 0);
+        std::cout << "Thong tin khong the de trong (Enter) de nhap lai!";
+        setColor(7, 0);
+        char key = _getch();
+        if (key == 13) {
+            return false;
+        }
+        else  return true;
     }
-    std::cout << "\n\n";
+    else {
+        return true;
+    }
 }
 
 // Nhập thông tin khách hàng
 void OrderModel::inputCustomerInfo(std::istream& in) {
     
-    goToXY(28, 3);
-    std::cout << "Nhap ten khach hang: ";
-    if (std::cin.peek() == '\n') {
-        std::cin.ignore();
+    
+    while (true) {
+        
+        goToXY(28, 3);
+        std::cout << "Nhap ten khach hang: ";
+        if (std::cin.peek() == '\n') {
+            std::cin.ignore();
+        }
+        
+        std::getline(in, customerName);
+        goToXY(28, 5);
+        if (!inforEmpty(customerName)) {
+            goToXY(28, 5);
+            std::cout << std::string(90, ' ');
+            continue;
+        }
+        else break;
+        
     }
-    std::getline(in, customerName);
-    checkInforEmpty(customerName);
-    goToXY(28, 5);
-    std::cout << "Nhap dia chi khach hang: ";
-    std::getline(in, customerAddress);
-    checkInforEmpty(customerAddress);
-    goToXY(28, 7);
-    std::cout << "Nhap so dien thoai khach hang: ";
-    std::getline(in, customerPhone);
-    checkInforEmpty(customerPhone);
+    
+
+
+    while (true) {
+        goToXY(28, 5);
+        std::cout << "Nhap dia chi khach hang: ";
+        std::getline(in, customerAddress);
+        goToXY(28, 7);
+        if (!inforEmpty(customerAddress)) {
+            goToXY(28, 7);
+            std::cout << std::string(90, ' ');
+            continue;
+        }
+        else break;
+    }
+    while (true) {
+        goToXY(28, 7);
+        std::cout << "Nhap so dien thoai khach hang: ";
+        std::getline(in, customerPhone);
+        goToXY(28, 9);
+        if (!inforEmpty(customerPhone)) {
+            goToXY(28, 9);
+            std::cout << std::string(90, ' ');
+            continue;
+        }
+        else break;
+    }
 }
 
 // Nhập danh sách hàng hóa
@@ -179,7 +217,7 @@ bool OrderModel::isOrderEligible()
 }
 
 // Lưu đơn hàng vào file
-void OrderModel::saveOrderToFile(const std::string& filename, int orderNumber) {
+bool OrderModel::saveOrderToFile(const std::string& filename, int orderNumber) {
 
 
     if (isOrderEligible())
@@ -198,12 +236,16 @@ void OrderModel::saveOrderToFile(const std::string& filename, int orderNumber) {
             }
 
             outfile << totalPrice << "\n";  // Thêm dòng trống giữa các đơn hàng
-            std::cout << "\nDon Hang Dang cho Xu Ly\n";
+            return true;
+           /* std::cout << "Don Hang Dang cho Xu Ly";*/
         }
         else {
-            std::cerr << "Loi: Khong the mo file de ghi." << std::endl;
+            /*std::cerr << "Loi: Khong the mo file de ghi." << std::endl;*/
+            return false;
         }
     }
-    else std::cout << "\nDat hang that bai\n";
+
+    return false;
+    //std::cout << "Dat hang that bai";
     
 }

@@ -10,6 +10,7 @@
 #include <string>
 #include <conio.h>
 #include "Font_Color.h"
+
 class MenuMainController {
 private:
     Display displayMain;
@@ -17,6 +18,7 @@ private:
     MenuManagerController managerController;
     ManageGoodsService goodsService;
     bool isRunning;
+
 
 public:
     // Hàm khởi tạo

@@ -7,12 +7,14 @@ OrderModelService::OrderModelService() {
 }
 
 // Lưu thông tin đơn hàng vào file
-void OrderModelService::saveOrderGoodsToFile() {
+bool OrderModelService::saveOrderGoodsToFile() {
     display.deleteBackGround();
     std::cin >> orderModel;  // Nhập thông tin đơn hàng từ người dùng
-    orderModel.saveOrderToFile("DonHang.txt", nextOrderNumber);  // Lưu đơn hàng vào file
+    int tmp = nextOrderNumber;
     nextOrderNumber++;  // Tăng `nextOrderNumber`
     saveNextOrderNumberToFile();  // Ghi `nextOrderNumber` mới vào file
+    return orderModel.saveOrderToFile("DonHang.txt", tmp);  // Lưu đơn hàng vào file
+   
 }
 
 // Đọc giá trị `nextOrderNumber` từ file

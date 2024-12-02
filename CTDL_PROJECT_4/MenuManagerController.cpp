@@ -124,7 +124,7 @@ bool MenuManagerController::login() {
                 << attemptsLeft << " lan thu.\n";
 
             if (attemptsLeft == 0) {
-                lockCountdown(300); // Khóa 5 phút (300 giây)
+                lockCountdown(15); // Khóa 5 phút (300 giây)
                 return false;
             }
             setColor(7, 0);

@@ -12,16 +12,14 @@ void ManageGoodsService::writeToFile() const {
 }
 
 // Thêm hàng hóa
-void ManageGoodsService::addGoods(GoodsModel& goodsModel) {
+bool ManageGoodsService::addGoods(GoodsModel& goodsModel) {
     readFile();
     if (goodsListModel.insertGoods(goodsModel)) {
         writeToFile();
+        return true;
     }
     else {
-        goToXY(28, 17);
-        setColor(12, 0);
-        std::cout << "Ma hang ton tai" << std::endl;
-        setColor(7, 0);
+        return false;
     }
 }
 
