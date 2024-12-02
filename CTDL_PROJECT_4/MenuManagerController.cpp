@@ -156,7 +156,11 @@ bool MenuManagerController::checkLogin() {
     
     
     goToXY(28, 16);
+    if (std::cin.peek() == '\n') {
+        std::cin.ignore(); // Loại bỏ ký tự '\n' nếu có
+    }
     std::cout << "NHAP TEN DANG NHAP:";
+
     std::getline(std::cin, username);
     goToXY(28, 18);
     std::cout << "NHAP MAT KHAU: ";
