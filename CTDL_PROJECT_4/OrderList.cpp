@@ -186,13 +186,31 @@ void OrderList::processOrder() {
             }
             else {
                 updateNumberFromCodeGoods(_orderList[0].getListGoods());
-                goToXY(28, i + 2);
-                i += 2;
-                std::cout << "Don hang da xu ly.\n";
-                _goodList.showDataAsTable();
+                display.deleteBackGround();
+                goToXY(28, 3);
+                std::cout << "Xu ly thanh cong don hang! Nhan (s) de xem hang con lai, (Enter) de tiep tuc!";
+                
+                char key = _getch();
+                goToXY(28, 3);
+                std::cout << std::string(90, ' ');
+                if (key == 's') {
+                   
+                    _goodList.showDataAsTable();
+                }
+                else {
+                    _orderList.erase(_orderList.begin());
+                    _goodList.writeToFile("HangHoa.txt");
+                    writeFile();
+                    continue;
+                }
+                std:: cout << std::endl;
+                
+                i += 3;
+                
             }
-
             _orderList.erase(_orderList.begin());
+            _goodList.writeToFile("HangHoa.txt");
+            writeFile();
         }
         else {
             goToXY(28, i + 2);
@@ -202,7 +220,7 @@ void OrderList::processOrder() {
 
         if (_orderList.empty()) {
             goToXY(28, i + 2);
-            i += 2;
+            i += 3;
             std::cout << "Khong con don hang de xu ly.\n";
             goToXY(28, i + 2);
             i += 2;
@@ -228,6 +246,7 @@ void OrderList::processOrder() {
             continue;
         }
         else if (key == 27) {
+            display.deleteBackGround();
             _goodList.writeToFile("HangHoa.txt");
             writeFile();
             break;

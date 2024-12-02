@@ -130,7 +130,7 @@ void Display::backGround() {
     setColor(7, 0); // Đặt lại màu mặc định khi kết thúc
 }
 void Display::deleteBackGround() {
-    for (int i = 1; i <= 25; i++) {
+    for (int i = 1; i <= 26; i++) {
         goToXY(26, i);
         std::cout << std::string(102, ' ');
     }
