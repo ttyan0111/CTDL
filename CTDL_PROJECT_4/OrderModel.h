@@ -39,6 +39,9 @@ public:
     // Hiển thị đơn hàng
     void display() const;
 
+    // check không nhập thông tin.
+    void checkInforEmpty(std::string &sourceString);
+
     // Nhập thông tin khách hàng
     void inputCustomerInfo(std::istream& in);
 
@@ -47,6 +50,9 @@ public:
 
     // Quá tải toán tử >>
     friend std::istream& operator>>(std::istream& in, OrderModel& order);
+
+    // kiểm tra đơn hàng đả đủ điều kiện
+    bool isOrderEligible();
 
     // Lưu đơn hàng vào file
     void saveOrderToFile(const std::string& filename, int orderNumber);

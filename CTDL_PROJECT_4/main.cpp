@@ -29,12 +29,6 @@ int main() {
 
 
     
-    
-    
-    
-
-
-    
 
     MenuMainController display;
     display.start();

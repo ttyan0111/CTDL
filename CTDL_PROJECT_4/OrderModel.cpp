@@ -41,20 +41,35 @@ void OrderModel::display() const {
     std::cout << totalPrice << std::endl;
 }
 
+// check không nhập thông tin.
+void OrderModel::checkInforEmpty(std::string &sourceString)
+{
+    while (sourceString == "")
+    {
+        std::cout << "Thong tin khong the de trong moi nhap lai: ";
+        std::getline(std::cin, sourceString);
+    }
+    std::cout << "\n\n";
+}
+
 // Nhập thông tin khách hàng
 void OrderModel::inputCustomerInfo(std::istream& in) {
+    
     goToXY(28, 3);
     std::cout << "Nhap ten khach hang: ";
     if (std::cin.peek() == '\n') {
         std::cin.ignore();
     }
     std::getline(in, customerName);
+    checkInforEmpty(customerName);
     goToXY(28, 5);
     std::cout << "Nhap dia chi khach hang: ";
     std::getline(in, customerAddress);
+    checkInforEmpty(customerAddress);
     goToXY(28, 7);
     std::cout << "Nhap so dien thoai khach hang: ";
     std::getline(in, customerPhone);
+    checkInforEmpty(customerPhone);
 }
 
 // Nhập danh sách hàng hóa
@@ -112,9 +127,6 @@ void OrderModel::inputGoodsList(std::istream& in) {
         }
 
 
-
-
-
         goToXY(28, 17);
         std::cout << "Nhap so luong: ";
         while (!(in >> quantity)) {
@@ -155,24 +167,43 @@ std::istream& operator>>(std::istream& in, OrderModel& order) {
     return in;
 }
 
+// kiểm tra đơn hàng đả đủ điều kiện
+bool OrderModel::isOrderEligible()
+{
+    for (const auto& item : listGoods) 
+    {
+        int numGoods = manageGoodsService.getNumofGoods(item.first);
+        if (numGoods == 0 || numGoods < item.second) return false;
+    }
+    return true;
+}
+
 // Lưu đơn hàng vào file
 void OrderModel::saveOrderToFile(const std::string& filename, int orderNumber) {
-    std::ofstream outfile(filename, std::ios::app);  // Mở file ở chế độ append
-    if (outfile.is_open()) {
-        orderDate.setToCurrentDate();
-        outfile << orderNumber << ":"
-            << customerName << ":"
-            << customerAddress << ":"
-            << customerPhone << ":"
-            << orderDate.toString() << ":";
 
-        for (const auto& item : listGoods) {
-            outfile << item.first << ":" << item.second << ":";
+
+    if (isOrderEligible())
+    {
+        std::ofstream outfile(filename, std::ios::app);  // Mở file ở chế độ append
+        if (outfile.is_open()) {
+            orderDate.setToCurrentDate();
+            outfile << orderNumber << ":"
+                << customerName << ":"
+                << customerAddress << ":"
+                << customerPhone << ":"
+                << orderDate.toString() << ":";
+
+            for (const auto& item : listGoods) {
+                outfile << item.first << ":" << item.second << ":";
+            }
+
+            outfile << totalPrice << "\n";  // Thêm dòng trống giữa các đơn hàng
+            std::cout << "\nDon Hang Dang cho Xu Ly\n";
         }
-
-        outfile << totalPrice << "\n";  // Thêm dòng trống giữa các đơn hàng
+        else {
+            std::cerr << "Loi: Khong the mo file de ghi." << std::endl;
+        }
     }
-    else {
-        std::cerr << "Loi: Khong the mo file de ghi." << std::endl;
-    }
+    else std::cout << "\nDat hang that bai\n";
+    
 }

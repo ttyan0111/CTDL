@@ -1,1 +1,21 @@
-﻿  CTDL_PROJECT_4.vcxproj -> E:\File_User\vs Code\CTDL_Project_4\CTDL_PROJECT_4\x64\Debug\CTDL_PROJECT_4.exe
+﻿  GoodsListModel.cpp
+C:\Users\ADMIN\source\repos\ctdl\CTDL_PROJECT_4\GoodsListModel.cpp(11,26): warning C4566: character represented by universal-character-name '\u1ED7' cannot be represented in the current code page (1252)
+C:\Users\ADMIN\source\repos\ctdl\CTDL_PROJECT_4\GoodsListModel.cpp(105,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\ctdl\CTDL_PROJECT_4\GoodsListModel.cpp(112,23): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\ctdl\CTDL_PROJECT_4\GoodsListModel.cpp(115,23): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  ManagerGoodsService.cpp
+  MenuMainController.cpp
+  MenuManagerController.cpp
+  MenuManagerGoodsController.cpp
+  OrderList.cpp
+C:\Users\ADMIN\source\repos\ctdl\CTDL_PROJECT_4\OrderList.cpp(17,30): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\ctdl\CTDL_PROJECT_4\OrderList.cpp(25,30): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\ctdl\CTDL_PROJECT_4\OrderList.cpp(35,30): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\ctdl\CTDL_PROJECT_4\OrderList.cpp(43,23): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\source\repos\ctdl\CTDL_PROJECT_4\OrderList.cpp(47,23): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  OrderModel.cpp
+  OrderModelService.cpp
+  main.cpp
+  Generating Code...
+C:\Users\ADMIN\source\repos\ctdl\CTDL_PROJECT_4\MenuManagerController.cpp(54,1): warning C4715: 'MenuManagerController::handleSelection': not all control paths return a value
+  CTDL_PROJECT_4.vcxproj -> C:\Users\ADMIN\source\repos\ctdl\x64\Debug\CTDL_PROJECT_4.exe

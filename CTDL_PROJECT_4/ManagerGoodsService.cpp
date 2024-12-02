@@ -100,3 +100,10 @@ double ManageGoodsService::getPriceByCode(std::string code) {
     GoodsModel gm =  goodsListModel.getGoodsModelFromByCode(code);
     return gm.getPrice();
 }
+
+
+// lấy số lượng hàng hóa của mã hàng yêu cầu.
+int ManageGoodsService::getNumofGoods(std::string code)
+{
+    return goodsListModel.getOneGoods(code);
+}

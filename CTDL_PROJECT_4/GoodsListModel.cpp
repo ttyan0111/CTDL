@@ -182,11 +182,30 @@ void GoodsListModel::writeToFile(const std::string& filename) const {
     outFile.close();
 }
 
+// chuyển các kí tử hoa thành thường.
+std::string GoodsListModel::to_Lower(std::string sourceString)
+{
+    std::string nameX = "";
+
+    // chuyển các kí tử hoa thành thường.
+    for (int i = 0; i < sourceString.size(); ++i)
+    {
+        if (sourceString[i] >= 65 && sourceString[i] <= 90) nameX += (sourceString[i] + 32);
+        else nameX += sourceString[i];
+    }
+
+    return nameX;
+}
+
 // Tìm kiếm hàng hóa
 void GoodsListModel::findGoods(const std::string name) {
     std::vector<GoodsModel> tmp;
     for (auto x : user.getGoodsList()) {
-        if (x.getProductName() == name) {
+        
+        std::string nameX = to_Lower(x.getProductName());
+        std::string nameY = to_Lower(name);
+
+        if (nameX == nameY) {
             tmp.push_back(x);
         }
     }
@@ -210,6 +229,7 @@ void GoodsListModel::updateOneGoods(const std::string code, const int& num) {
 int GoodsListModel::getOneGoods(const std::string& code) {
     return user.getNumFromCode(code);
 }
+
 GoodsModel GoodsListModel::getGoodsModelFromByCode(std::string code) {
     return user.getFromCode(code);
 }

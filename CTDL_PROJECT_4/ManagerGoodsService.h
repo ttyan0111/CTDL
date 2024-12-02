@@ -36,6 +36,9 @@ public:
     void find();
     bool boolFindByCode(std::string code);
     double getPriceByCode(std::string code);
+
+    // lấy số lượng hàng hóa của mã hàng yêu cầu.
+    int getNumofGoods(std::string code);
 };
 
 #endif // GOODSLISTSERVICE_H

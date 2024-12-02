@@ -37,6 +37,9 @@ public:
     // Hàm ghi dữ liệu vào file
     void writeToFile(const std::string& filename) const;
 
+    // chuyển kí tự hoa thành thường.
+    std::string to_Lower(std::string sourceString);
+
     // Tìm kiếm hàng hóa
     void findGoods(const std::string name);
     bool boolFindByCode(std::string code);
